@@ -6,7 +6,7 @@ on:
 
 jobs:
   continuous-deployment:
-    runs-on: ubuntu-latest
+    runs-on: 'ubuntu-latest'
     environment:
       name: 'github-pages'
       url: ${{ steps.deployment.outputs.page_url }}
@@ -22,7 +22,7 @@ jobs:
         uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
         with:
           name: 'resume'
-          path: './resume.pdf'
+          path: 'resume.pdf'
 
       - name: 'Deploy to GitHub Pages'
         id: 'deployment'
