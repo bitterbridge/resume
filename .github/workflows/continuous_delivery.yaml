@@ -1,0 +1,53 @@
+name: Continuous Deployment
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  continuous-deployment:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        name: Continuous Deployment
+
+        on:
+          push:
+            branches:
+              - main
+          workflow_dispatch:
+
+        permissions:
+          contents: read
+          pages: write
+          id-token: write
+
+        concurrency:
+          group: 'continuous_deployment'
+          cancel-in-progress: true
+
+        jobs:
+          deploy:
+            environment:
+              name: Pages
+              url: ${{ steps.deployment.outputs.page_url }}
+            runs-on: 'ubuntu-latest'
+            steps:
+
+              - name: 'Checkout'
+                uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+              - name: 'Setup Pages'
+                uses: actions/configure-pages@1f0c5cde4bc74cd7e1254d0cb4de8d49e9068c7d # v4.0.0
+
+              - name: 'Upload artifact'
+                uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
+                with:
+                  name: 'resume'
+                  path: './resume.pdf'
+
+              - name: 'Deploy to GitHub Pages'
+                id: 'deployment'
+                uses: actions/deploy-pages@decdde0ac072f6dcbe43649d82d9c635fff5b4e4 # v4.0.4
