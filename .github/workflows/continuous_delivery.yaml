@@ -9,6 +9,10 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: 'continuous_deployment'
+  cancel-in-progress: true
+
 jobs:
   continuous-deployment:
     runs-on: 'ubuntu-latest'
