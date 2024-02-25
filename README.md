@@ -6,8 +6,6 @@ If you're looking for information about me (Nathan Douglas), my [GitHub profile]
 
 If you're looking for an actual copy of my general, honest-to-$DEITY résumé, check [GitHub Pages](https://ndouglas.github.io/resume/resume.pdf).
 
-![Résumé, résumé, ooh la la](./resume.pdf)
-
 ## Frequently Asked Questions
 
 ### Why?
