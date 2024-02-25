@@ -1,4 +1,4 @@
-% resume.tex
+% Nug Doug's Tunable Résumé.
 %
 % (c) 2024 Nathan Douglas <brisk.bell8333@tenesm.us> https://darkdell.net
 % I'm releasing this under the Unlicense.  See LICENSE for details.
@@ -8,7 +8,54 @@
 
 \documentclass[11pt,a4paper]{article}
 
+% Variables
+\input{params.tex}
+
+% Packages
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage[pdftex]{hyperref}
+
+% Hyperref setup
+\hypersetup{
+  colorlinks,%
+  citecolor=black,%
+  filecolor=black,%
+  linkcolor=black,%
+  urlcolor=black,%
+}
+
+% URL style
+\urlstyle{same}
+
+% Define colors
+\definecolor{mygrey}{gray}{.85}
+\definecolor{mygreylink}{gray}{.40}
+
+% Height of the text area of the page
+\textheight=9.0in
+
+% Indentation
+\raggedbottom
+\raggedright
+
+% Set the page margins
+\setlength{\tabcolsep}{0in}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{0.375in}
+\addtolength{\textwidth}{0.5in}
+\addtolength{\topmargin}{-.375in}
+\addtolength{\textheight}{0.75in}
+
+% Begin the document
 \begin{document}
-Hello world!
+
+Hello \myemail{}! % This is a comment
 $Hello world!$ %math mode
+
+% End the document
 \end{document}
