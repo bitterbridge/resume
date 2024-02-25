@@ -14,6 +14,6 @@ I dislike WYSIWYG editors and I should customize my résumé for each job applic
 
 And also because I don't know LaTeX, and I thought I might as well add something new to my résumé.
 
-### How's It Going?
+### How's It Going, Nug Doug?
 
-Not well, really. Not well.
+Not well, Other Nug Doug. Not well.
