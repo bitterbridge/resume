@@ -1,5 +1,7 @@
 # Nug Doug's Tunable Résumé
 
+**Note**: This is heavily under construction.
+
 My résumé, written in LaTeX. Yes, you've heard of tuna fish, but can you tuna résumé?
 
 If you're looking for information about me (Nathan Douglas), my [GitHub profile](https://github.com/ndouglas/) is probably the best place.
