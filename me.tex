@@ -5,6 +5,11 @@
 \usepackage{xifthen}
 
 % Read parameters.
+% This defines the following variables:
+% \myemail -- my email address
+% \myrole -- allow accentuating different roles:
+%   - "devops" -- DevOps Engineer
+%   - "software" -- Software Engineer
 \input{params.tex}
 
 % Define a command to add items with a bullet conditionally.
@@ -17,7 +22,7 @@
 \newcommand{\myfullname}{Nathan Douglas}
 
 % My phone number.
-\newcommand{\myphone}{(330)998-8049}
+\newcommand{\myphone}{(330) 998-8049}
 \newcommand{\myphonelink}{\href{tel:\myphone}{\myphone}}
 
 % My website URL.
@@ -39,11 +44,9 @@
 
 % My name, linked to my website.
 \newcommand{\myheadername}{%
-  \href{\mywebsiteurl}{%
-    % Make the name very large and bold, unlike me.
-    \Huge\bfseries%
-    \myfullname%
-  }%
+  % Make the name very large and bold, unlike me.
+  \Huge\bfseries%
+  \myfullname%
 }
 
 % My contact information is a list of contact items, separated by bullet points
@@ -68,5 +71,151 @@
   \begin{tabularx}{\textwidth}{L{3in} X R{3.5in}} % Adjust the width of the non-X columns as needed
     \myheadername &  & \mycontactinfo{} \\
   \end{tabularx}
-  \vspace{0.1in}
+}
+
+% Define a list of employers and periods of employment.
+% This will be a list of items, each of which is a resumeemployer command.
+\newcommand{\resumeemployers}[1]{%
+  \begin{itemize}
+    #1
+  \end{itemize}
+}
+
+% Define an employer and period of employment.
+% This is a two-column table with the employer on the left and the period of
+% employment on the right.
+\newcommand{\resumeemployer}[2]{%
+  % Use a tabular* to make the table fill the entire width of the page.
+  \begin{tabular*}{7in}{L{5in} R{2in}}
+    \textbf{#1} & #2 \\
+  \end{tabular*}\vspace{-4pt}
+}
+
+% Define a list of roles at a given employer.
+% This will be a list of items, each of which is a resumerole command.
+\newcommand{\resumeroles}[1]{%
+  % Begin a list (not indented, no bullets, etc).
+  \begin{itemize}[leftmargin=0pt, noitemsep, nosep, label={}]
+    #1
+  \end{itemize}
+}
+
+% Define a job title, project, and period of position.
+% This is a two-column table with the job title on the left, project name in
+% parentheses, and the period of the position on the right.
+\newcommand{\resumerole}[3]{%
+  \small
+  % Use a tabular* to make the table fill the entire width of the page.
+  \begin{tabular*}{7in}{L{5in} R{2in}}
+    #1 (#2) & #3 \\
+  \end{tabular*}
+}
+
+% Define a list of resume items within a given role.
+% This will be a list of items, each of which is a resumeitem command.
+\newcommand{\resumeroleitems}[1]{%
+  \footnotesize
+  \begin{itemize}
+    #1
+  \end{itemize}\vspace{6pt}
+}
+
+% An item in a list.
+\newcommand{\resumeroleitem}[1]{%
+  \item #1 \vspace{-2pt}
+}
+
+% Define my experience
+\newcommand{\myexperience}{%
+  % Begin experience list
+  \resumeemployers{%
+    % Begin Agile Six
+    \item \resumeemployer{\href{https://agile6.com}{Agile Six Applications, Inc.}}{October 2020 -- Present}
+    {% Begin roles at Agile Six
+      \resumeroles{% List of roles at Agile Six
+
+        % CIE DevOps Engineer Role
+        \item \resumerole{Senior DevOps Engineer}{VA.gov Check-In Experience Team}{February 2024 -- Present}{%
+          \resumeroleitems{%
+            \resumeroleitem{Haven't blown anything up yet}
+          } % End CIE DevOps Engineer role items.
+        } % End CIE DevOps Engineer Role
+
+        % CMS Tech Lead Role
+        \item \resumerole{Technical Lead}{VA.gov Platform CMS Team}{July 2023 -- February 2024}{%
+          \resumeroleitems{%
+            \resumeroleitem{Fostered transparency and alignment by communicating project progress, updates, and any issues or blockers}
+            \resumeroleitem{Maintained clear and open lines of communication, enabling stakeholders to make informed decisions and ensuring project success}
+            \resumeroleitem{Anticipated potential development challenges, identified project delays, and swiftly addressed issues; mitigated risks, minimized project delays, and ensured on-time delivery}
+            \resumeroleitem{Mentored engineers to improve proficiency and expertise in best practices}
+            \resumeroleitem{Orchestrated team of 7-9 engineers in PagerDuty rotation, guaranteeing round-the-clock operational effectiveness and reducing incident response time by 40\%}
+            \resumeroleitem{Led team in overcoming complex technical challenges, removing impediments, and ensuring smooth project execution}
+            \resumeroleitem{Hired two Senior Software Engineers and Software Quality Architect; drafted job descriptions, conducted technical interviews, and made final hiring recommendations}
+          }
+        }% End CMS Tech Lead Role
+
+        % CMS DevOps Engineer Role
+        \item \resumerole{Senior DevOps Engineer}{VA.gov Platform CMS Team}{October 2020 -- February 2024}{%
+          \resumeroleitems{%
+            \resumeroleitem{Led the implementation of industry QA architecture best practices, resulting in a 20\% improvement in overall product quality and customer satisfaction, while meeting regulatory standards and compliance requirements}
+            \resumeroleitem{Collaborated closely with cross-functional product teams to align technical strategies with business goals, driving continuous improvement across the organization}
+            \resumeroleitem{Mentored engineers on advanced test and system design techniques, driving team-wide adoption and increasing overall testing efficiency by 30\%, while aligning technical strategies with organizational objectives}
+            \resumeroleitem{Crafted and documented procedures, including timelines and sample communications for consistent management of out-of-band deploys, reducing procedure duration by approximately 50\%}
+            \resumeroleitem{Directed ongoing enhancement and deployment of Drupal CMS and associated infrastructure for VA.gov website, catering to approximately 14M visitors and 26M visits monthly}
+            \resumeroleitem{Revamped internal content release management system, resulting in 60\% reduction in Change Failure Rate}
+            \resumeroleitem{Slashed CMS product delivery lead time by 30\% and CI lead times by 60\%}
+          }
+        }% End CMS DevOps Engineer Role
+      } % End roles at Agile Six
+    }% End Agile Six
+
+    % Begin Aviation International News
+    \item \resumeemployer{\href{https://www.ainonline.com/}{Aviation International News}}{January 2015 -- October 2020}
+    {% Begin roles at Aviation International News
+      \resumeroles{% List of roles at Aviation International News
+
+        % Senior Software/DevOps Engineer Role
+        \item \resumerole{Senior Software/DevOps Engineer}{ainonline.com}{January 2015 -- October 2020}{%
+          \resumeroleitems{%
+            \resumeroleitem{Architected and executed an innovative DevOps and backend development strategy, leading to the successful launch of two transformative media products}
+            \resumeroleitem{Implemented local development environments, CI/CD pipelines, and cutting-edge QA methodologies, resulting in a 35\% decrease in production bugs and a 25\% improvement in team collaboration and efficiency}
+            \resumeroleitem{Guided and mentored junior engineers, emphasizing soft skills and engineering best practices, leading to a 30\% increase in overall team productivity and timely delivery of key milestones}
+            \resumeroleitem{Instituted CD pipeline, including functional tests and staging deployment, resulting in 33\% decrease in Change Failure Rate}
+            \resumeroleitem{Created tailored Vagrant-based solution for local development; increased team productivity by 30\% and enabled rapid iteration and testing of new features}
+            \resumeroleitem{Developed an app to centralize ad sales, subscriptions, and circulation data; this reduced manual data entry by 80\%, saved management and sales teams 20 hours per week, and empowered data-driven decision-making}
+            \resumeroleitem{Architected CI pipeline, encompassing unit tests, static analysis, and code style tests, yielding 30\% decrease in Change Failure Rate}
+            \resumeroleitem{Migrated systems from Acquia hosting to sustainable, self-servicing AWS, cutting infrastructure expenses by over two-thirds and reducing annual hosting costs by 40\%}
+          }
+        }% End Senior Software/DevOps Engineer Role
+      } % End roles at Aviation International News
+    }% End Aviation International News
+
+    % Begin DEVONtechnologies
+    \item \resumeemployer{\href{https://www.devontechnologies.com/}{DEVONtechnologies}}{January 2011 -- December 2015}
+    {% Begin roles at DEVONtechnologies
+      \resumeroles{% List of roles at DEVONtechnologies
+
+        % Software Engineer Role
+        \item \resumerole{Software Engineer}{DEVONthink Sync}{January 2011 -- December 2015}{%
+          \resumeroleitems{%
+            \resumeroleitem{Developed, launched, and maintained proprietary sync technologies for flagship macOS/iOS desktop document database app}
+            \resumeroleitem{Collaborated and communicated within a globally dispersed engineering department across six countries and four continents}
+            \resumeroleitem{Led the adoption of Agile project management, Lean principles, and DevOps methodologies}
+            \resumeroleitem{Introduced CI/CD pipelines, resulting in 90\% decrease in delivery lead time and eradicating delivery and packaging errors}
+            \resumeroleitem{Introduced automated testing, leading to 30\% reduction in manual testing hours, elevating test coverage to 70\%, and cutting change failure rate by 30\%}
+            \resumeroleitem{Automated aspects of certificate and configuration management, culminating in savings of 120 person-hours annually}
+          }
+        }% End Software Engineer Role
+      } % End roles at DEVONtechnologies
+    }% End DEVONtechnologies
+
+  }% End employers
+}% End experience section
+
+% Define my education
+\newcommand{\myeducation}{%
+}
+
+% Define my skills
+\newcommand{\myskills}{%
 }

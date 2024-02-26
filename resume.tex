@@ -6,17 +6,24 @@
 % GENERAL NOTE:  There may be some notes specific to myself. If you're only
 % interested in my LaTeX source or it doesn't make sense, please disregard.
 
-\documentclass[11pt,a4paper]{article}
+\documentclass[10pt,letterpaper]{article}
 
 % Get my data.
 \input{me.tex}
 
 % Packages
-\usepackage{latexsym}
-\usepackage[empty]{fullpage}
 \usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
+\usepackage[T1]{fontenc}
+\usepackage[empty]{fullpage}
+\usepackage[letterpaper,margin=0.8in]{geometry}
 \usepackage[pdftex]{hyperref}
+\usepackage{latexsym}
+\usepackage{mdwlist}
+\usepackage{textcomp}
+\usepackage{verbatim}
+
+% Set the page style to empty.
+\pagestyle{empty}
 
 % Hyperref setup
 \hypersetup{
@@ -24,7 +31,7 @@
   citecolor=black,%
   filecolor=black,%
   linkcolor=black,%
-  urlcolor=black,%
+  urlcolor=mygreylink,%
 }
 
 % URL style
@@ -36,10 +43,6 @@
 
 % Height of the text area of the page
 \textheight=9.0in
-
-% Indentation
-\raggedbottom
-\raggedright
 
 % Set the page margins
 \setlength{\tabcolsep}{0in}
@@ -56,6 +59,21 @@
 
 % Header with personal information
 \myheader
+
+% Nice line that looks kinda sexy
+\vspace{-0.1in}\hrule
+
+% Things I done did do
+\subsection*{Experience}
+\myexperience
+
+% Things I learned
+\subsection*{Education}
+\myeducation
+
+% Things I can do
+\subsection*{Skills}
+\myskills
 
 % End the document
 \end{document}
