@@ -1,6 +1,7 @@
 % Packages.
 \usepackage{array}
 \usepackage{enumitem}
+\usepackage{fontawesome5}
 \usepackage{tabularx}
 \usepackage{xifthen}
 
@@ -12,35 +13,37 @@
 %   - "software" -- Software Engineer
 \input{params.tex}
 
-% Define a command to add items with a bullet conditionally.
-\newcommand{\contactitemseparator}{\hspace{0.5em}\textbullet\hspace{0.5em}}
+% Define new column types.
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+
+% Define a command for a contact info item.
+\newcommand{\contactinfoitem}[4]{#1\hspace{0.5em}\href{#2 #3}{#4}}
+
+% Define a command to separate contact items.
+\newcommand{\contactinfoitemseparator}{\hspace{1em}}
 
 % My email address, linked to a mailto: URL.
-\newcommand{\myemaillink}{\href{mailto:\myemail}{\myemail}}
+\newcommand{\myemailcontact}{\contactinfoitem{\faAt}{mailto:}{\myemail}{\myemail}}
 
 % My name.
 \newcommand{\myfullname}{Nathan Douglas}
 
 % My phone number.
 \newcommand{\myphone}{(330) 998-8049}
-\newcommand{\myphonelink}{\href{tel:\myphone}{\myphone}}
+\newcommand{\myphonecontact}{\contactinfoitem{\faPhone}{tel:}{\myphone}{\myphone}}
 
 % My website URL.
 \newcommand{\mywebsiteurl}{https://darkdell.net}
-\newcommand{\mywebsitelink}{\href{\mywebsiteurl}{darkdell.net}}
+\newcommand{\mywebsitecontact}{\contactinfoitem{\faGlobe}{}{\mywebsiteurl}{darkdell.net}}
 
 % My LinkedIn URL.
 \newcommand{\mylinkedinurl}{https://www.linkedin.com/in/nug-doug}
-\newcommand{\mylinkedinlink}{\href{\mylinkedinurl}{LinkedIn}}
+\newcommand{\mylinkedincontact}{\contactinfoitem{\faLinkedin}{}{\mylinkedinurl}{nug-doug}}
 
 % My GitHub URL.
 \newcommand{\mygithuburl}{https://github.com/ndouglas/}
-\newcommand{\mygithublink}{\href{\mygithuburl}{GitHub}}
-
-% Define a new column type that aligns content at the top
-% The 'b' parameter in >{\raggedright\arraybackslash}b will align content at the bottom, which is not what you want. Instead, use 'p' or define a new type.
-\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+\newcommand{\mygithubcontact}{\contactinfoitem{\faGithub}{}{\mygithuburl}{ndouglas}}
 
 % My name, linked to my website.
 \newcommand{\myheadername}{%
@@ -59,19 +62,18 @@
   \vspace{-1.75em}%
   % Let's make this text a little smaller.
   \small%
-  \myemaillink \contactitemseparator \myphonelink\\
-  \mywebsitelink \contactitemseparator \mylinkedinlink \contactitemseparator \mygithublink%
+  \myemailcontact \contactinfoitemseparator \myphonecontact \\
+  \mywebsitecontact \contactinfoitemseparator \mylinkedincontact \contactinfoitemseparator \mygithubcontact %
 }
 
 % Define my header
 \newcommand{\myheader}{%
   % Create a header with my name and contact information.
   % The name should occupy about the left half of the page, and the contact
-  % information should occupy about the right half of the page.
-  \noindent\begin{tabularx}{\textwidth}{L{3.5in} R{\dimexpr\textwidth-3.5in\relax}}
+  % information should occupy the rest of the page.
+  \noindent\begin{tabularx}{\textwidth}{@{}L R@{}}
     \myheadername & \mycontactinfo \\
   \end{tabularx}
-  % Nice line that looks kinda sexy
   \vspace{-0.1in}\hrule
 }
 
@@ -87,8 +89,8 @@
 % This is a two-column table with the employer on the left and the period of
 % employment on the right.
 \newcommand{\resumeemployer}[2]{%
-  % Use a tabular* to make the table fill the entire width of the page.
-  \noindent\begin{tabularx}{\textwidth}{L{5in} R{\dimexpr\textwidth-5in\relax}}
+  % Use a tabularx to make the table fill the entire width of the page.
+  \noindent\begin{tabularx}{\linewidth}{@{}L R@{}}
     \textbf{#1} & #2 \\
   \end{tabularx}\vspace{-4pt}
 }
@@ -107,10 +109,9 @@
 % parentheses, and the period of the position on the right.
 \newcommand{\resumerole}[3]{%
   \small
-  % Use a tabular* to make the table fill the entire width of the page.
-  \begin{tabular*}{7in}{L{5in} R{2in}}
+  \begin{tabularx}{\linewidth}{@{}L R@{}}
     #1 (#2) & #3 \\
-  \end{tabular*}
+  \end{tabularx}
 }
 
 % Define a list of resume items within a given role.
