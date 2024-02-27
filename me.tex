@@ -1,7 +1,9 @@
 % Packages.
+\usepackage{accsupp}
 \usepackage{array}
 \usepackage{enumitem}
 \usepackage{fontawesome5}
+\usepackage[pdftex]{hyperref}
 \usepackage{tabularx}
 \usepackage{xifthen}
 
@@ -17,33 +19,79 @@
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
 
+% A PDF command to insert a newline.
+\newcommand{\pdfnewline}{^^J}
+
 % Define a command for a contact info item.
-\newcommand{\contactinfoitem}[4]{#1\hspace{0.5em}\href{#2 #3}{#4}}
+\newcommand{\contactinfoitem}[3]{#1\hspace{0.5em}\href{#2}{#3}}
 
 % Define a command to separate contact items.
 \newcommand{\contactinfoitemseparator}{\hspace{1em}}
-
-% My email address, linked to a mailto: URL.
-\newcommand{\myemailcontact}{\contactinfoitem{\faAt}{mailto:}{\myemail}{\myemail}}
 
 % My name.
 \newcommand{\myfullname}{Nathan Douglas}
 
 % My phone number.
 \newcommand{\myphone}{(330) 998-8049}
-\newcommand{\myphonecontact}{\contactinfoitem{\faPhone}{tel:}{\myphone}{\myphone}}
+\newcommand{\myphoneplain}{+13309988049}
 
 % My website URL.
-\newcommand{\mywebsiteurl}{https://darkdell.net}
-\newcommand{\mywebsitecontact}{\contactinfoitem{\faGlobe}{}{\mywebsiteurl}{darkdell.net}}
+\newcommand{\mywebsite}{darkdell.net}
 
 % My LinkedIn URL.
-\newcommand{\mylinkedinurl}{https://www.linkedin.com/in/nug-doug}
-\newcommand{\mylinkedincontact}{\contactinfoitem{\faLinkedin}{}{\mylinkedinurl}{nug-doug}}
+\newcommand{\mylinkedinusername}{nug-doug}
 
 % My GitHub URL.
-\newcommand{\mygithuburl}{https://github.com/ndouglas/}
-\newcommand{\mygithubcontact}{\contactinfoitem{\faGithub}{}{\mygithuburl}{ndouglas}}
+\newcommand{\mygithubusername}{ndouglas}
+
+% My email address contact item.
+\newcommand{\myemailcontact}{%
+  \BeginAccSupp{%
+    method=pdfstringdef,%
+    space=true,%
+    ActualText={\pdfnewline Email: \myemail}
+  }\normalfont \contactinfoitem{\faAt}{mailto:\myemail}{\myemail}
+  \EndAccSupp{}
+}
+
+% Phone number contact item.
+\newcommand{\myphonecontact}{%
+  \BeginAccSupp{%
+    method=pdfstringdef,%
+    ActualText={\pdfnewline Phone: \myphone}%
+  }\normalfont \contactinfoitem{\faPhone}{tel:\myphoneplain}{\myphone}%
+  \EndAccSupp{}%
+}
+
+% Website contact item.
+\newcommand{\mywebsiteurl}{https://\mywebsite/}
+\newcommand{\mywebsitecontact}{%
+  \BeginAccSupp{%
+    method=pdfstringdef,%
+    ActualText={\pdfnewline Website: \mywebsiteurl}%
+  }\normalfont \contactinfoitem{\faGlobe}{\mywebsiteurl}{\mywebsite}%
+  \EndAccSupp{}
+}
+
+% LinkedIn supplemental commands.
+\newcommand{\mylinkedinurl}{https://www.linkedin.com/in/\mylinkedinusername/}
+\newcommand{\mylinkedincontact}{%
+  \BeginAccSupp{%
+    method=pdfstringdef,%
+    ActualText={\pdfnewline LinkedIn: \mylinkedinurl}%
+  }\normalfont \contactinfoitem{\faLinkedin}{\mylinkedinurl}{\mylinkedinusername}%
+  \EndAccSupp{}%
+}
+
+% GitHub supplemental commands.
+\newcommand{\mygithuburl}{https://github.com/\mygithubusername/}
+\newcommand{\mygithubcontact}{%
+  \BeginAccSupp{%
+    method=pdfstringdef,%
+    ActualText={\pdfnewline GitHub: \mygithuburl}%
+  }\normalfont \contactinfoitem{\faGithub}{\mygithuburl}{\mygithubusername}%
+  \EndAccSupp{}%
+}
 
 % My name, linked to my website.
 \newcommand{\myheadername}{%

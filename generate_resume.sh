@@ -29,3 +29,6 @@ EOF
 
 # Compile the LaTeX document.
 pdflatex resume.tex;
+
+# Convert the PDF to text.
+pdftotext -raw resume.pdf;
