@@ -6,7 +6,8 @@ Website: https://darkdell.net/
 LinkedIn: https://www.linkedin.com/in/nug-doug/ 
 GitHub: https://github.com/ndouglas/
 Experience
-• Agile Six Applications, Inc. October 2020 – Present
+• Agile Six Applications, Inc.
+October 2020 – Present
 Senior DevOps Engineer (VA.gov Check-In Experience Team) February 2024 – Present
 ∗ Haven’t blown anything up yet
 Technical Lead (VA.gov Platform CMS Team) July 2023 – February 2024
@@ -33,7 +34,8 @@ deploys, reducing procedure duration by approximately 50%
 imately 14M visitors and 26M visits monthly
 ∗ Revamped internal content release management system, resulting in 60% reduction in Change Failure Rate
 ∗ Slashed CMS product delivery lead time by 30% and CI lead times by 60%
-• Aviation International News January 2015 – October 2020
+• Aviation International News
+January 2015 – October 2020
 Senior Software/DevOps Engineer (ainonline.com) January 2015 – October 2020
 ∗ Architected and executed an innovative DevOps and backend development strategy, leading to the successful launch of two transfor-
 mative media products
@@ -42,14 +44,15 @@ production bugs and a 25% improvement in team collaboration and efficiency
 ∗ Guided and mentored junior engineers, emphasizing soft skills and engineering best practices, leading to a 30% increase in overall
 team productivity and timely delivery of key milestones
 ∗ Instituted CD pipeline, including functional tests and staging deployment, resulting in 33% decrease in Change Failure Rate
-∗ Created tailored Vagrant-based solution for local development; increased team productivity by 30% and enabled rapid iteration and
-testing of new features
+∗ Created a Vagrant-based solution for local development; increased team productivity by 30% and enabled rapid iteration and testing
+of new features
 ∗ Developed an app to centralize ad sales, subscriptions, and circulation data; this reduced manual data entry by 80%, saved management
 and sales teams 20 hours per week, and empowered data-driven decision-making
 ∗ Architected CI pipeline, encompassing unit tests, static analysis, and code style tests, yielding 30% decrease in Change Failure Rate
 ∗ Migrated systems from Acquia hosting to sustainable, self-servicing AWS, cutting infrastructure expenses by over two-thirds and
 reducing annual hosting costs by 40%
-• DEVONtechnologies January 2011 – December 2015
+• DEVONtechnologies
+January 2011 – December 2015
 Software Engineer (DEVONthink Sync) January 2011 – December 2015
 ∗ Developed, launched, and maintained proprietary sync technologies for flagship macOS/iOS desktop document database app
 ∗ Collaborated and communicated within a globally dispersed engineering department across six countries and four continents
@@ -59,5 +62,27 @@ Software Engineer (DEVONthink Sync) January 2011 – December 2015
 failure rate by 30%
 ∗ Automated aspects of certificate and configuration management, culminating in savings of 120 person-hours annually
 Education
-Skills
+University of Nevada at Las Vegas (Las Vegas, NV)
+• Bachelor’s in Computer Science May 2009 – December 2011
+Skills
+Languages: 
+9 years of experience in PHP 
+PHP projects: 
+- VA.gov CMS (https://www.va.gov/) (2020-2024): I developed and maintained the backend for a major government website, including custom code for a Drupal 8/9/10 CMS. 
+- AINonline (https://www.ainonline.com/) (2016-2020): I developed and maintained the backend for an aviation news website, including custom code for a Drupal 7 CMS, ad sales, a custom newsletter generator, and subscription management. 
+- BJTonline (https://www.bjtonline.com/) (2016-2020): I developed and maintained the backend for a business aviation news website, including custom code for a Drupal 7 CMS, ad sales, and subscription management. 
+- FutureFlight (https://www.futureflight.aero/) (2019-2020): I developed and maintained the backend for an aviation news website, including custom code for a Drupal 8 CMS, a custom newsletter generator, and subscription management.  
+4 years of experience in Objective-C 
+Objective-C projects: 
+- DEVONthink Pro Sync (https://devontechnologies.com/) (2012-2015): I developed and maintained the sync engine for a macOS/iOS desktop document database app.  
+1 years of experience in LaTeX 
+LaTeX projects: 
+- Resume (https://github.com/ndouglas/resume) (2024-): I rewrote my resume in LaTeX to improve its maintainability and my ability to fine-tune it for individual job descriptions. 
+Infrastructure-as-Code: Terraform, CloudFormation, Ansible, Puppet, Chef, SaltStack
+CI/CD: Jenkins, GitHub Actions, CircleCI, Travis CI, GitLab CI, Bitbucket Pipelines
+Containerization: Docker, Kubernetes, Nomad, Amazon ECS, Amazon EKS
+Cloud Platforms: Amazon Web Services, Google Cloud Platform, Microsoft Azure
+Monitoring: Prometheus, Grafana, Datadog, New Relic, Amazon CloudWatch
+Logging: Elasticsearch, Logstash, Kibana, Splunk, Sumo Logic
+Networking: TCP/IP, DNS, HTTP, HTTPS, VPN, VPC, Route 53, CloudFront, ELB, ALB, NLB
 
