@@ -126,7 +126,7 @@
 % This is a two-column table with the employer on the left and the period of
 % employment on the right.
 \newcommand{\resumeemployer}[2]{%
-  \item \noindent\begin{tabularx}{\linewidth}{@{}L R@{}}
+  \item\noindent\begin{tabularx}{\linewidth}{@{}L R@{}}
     \textbf{#1} & #2 \\
   \end{tabularx}\vspace{-4pt}
 }
@@ -143,9 +143,7 @@
 % This is a two-column table with the job title on the left, project name in
 % parentheses, and the period of the position on the right.
 \newcommand{\resumerole}[3]{%
-  \begin{tabularx}{\linewidth}{@{}L R@{}}
-    #1 (#2) & #3 \\
-  \end{tabularx}
+  #1 (#2; #3)
 }
 
 % Define a list of resume role items within a given role.
@@ -249,27 +247,24 @@
   }% End employers
 }% End experience section
 
-% Define my education
-\newcommand{\myeducation}{%
-  \noindent\textbf{\href{https://www.unlv.edu}{University of Nevada at Las Vegas}} (Las Vegas, NV)
-  \begin{itemize}
-    \resumestudy{Bachelor's in Computer Science}{May 2009 -- December 2011}{%
-      \pdfnewline - Graduated with a 3.5 GPA
-      \pdfnewline - Took graduate-level coursework in Artificial Intelligence
-      \pdfnewline - Completed an independent study in Virtual Machine design and implementation, and gave a guest lecture on the topic
-    }
-  \end{itemize}
-}
-
 % Define a degree and period of study.
-\newcommand{\resumestudy}[3]{%
+\newcommand{\resumestudy}[4]{%
   \BeginAccSupp{
     method=pdfstringdef,
     unicode,
-    ActualText={\pdfnewline I earned a #1 after attending #2. #3 \pdfnewline}
+    ActualText={\pdfnewline I earned a #1 after attending #2 #3. \pdfnewline}
   }
-  \item #1 \hfill #2
+  #1 (#2; #3)
   \EndAccSupp{}
+}
+
+% Define my education
+\newcommand{\myeducation}{%
+  \resumestudy{Bachelor's in Computer Science}{University of Nevada at Las Vegas}{May 2009 -- December 2011}{%
+    \pdfnewline - Graduated with a 3.5 GPA
+    \pdfnewline - Took graduate-level coursework in Artificial Intelligence
+    \pdfnewline - Completed an independent study in Virtual Machine design and implementation, and gave a guest lecture on the topic
+  }
 }
 
 % Define a list of skill areas.
