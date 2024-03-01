@@ -1,6 +1,6 @@
 # Nug Doug's Tunable Résumé
 
-**Note**: This is heavily under construction.
+**Note**: This is heavily under construction. And kinda BS ATM NGL. I'm working on formatting and logic more than content right now.
 
 My résumé, written in LaTeX. Yes, you've heard of tuna fish, but can you tuna résumé?
 
