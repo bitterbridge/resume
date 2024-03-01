@@ -94,7 +94,9 @@
 }
 
 % My name, linked to my website.
-\newcommand{\myheadername}{\Huge\bfseries\myfullname}
+\newcommand{\myheadername}{%
+  \Huge\bfseries\myfullname
+}
 
 % My contact information is a list of contact items, separated by bullet points
 % when they occur in the same line, and separated by newlines when they occur
@@ -172,32 +174,33 @@
         \resumerole{Senior DevOps Engineer}{VA.gov Check-In Experience Team}{February 2024 -- Present}{%
           \resumeroleitems{%
             \resumeroleitem{Haven't blown anything up yet}
+            \resumeroleitem{Served on a policy team to improve hiring practices for DevOps engineers}
           } % End CIE DevOps Engineer role items.
         } % End CIE DevOps Engineer Role
 
         % CMS Tech Lead Role
         \resumerole{Technical Lead}{VA.gov Platform CMS Team}{July 2023 -- February 2024}{%
           \resumeroleitems{%
+            \resumeroleitem{Directed ongoing enhancement and deployment of Drupal CMS and associated infrastructure for VA.gov}
             \resumeroleitem{Fostered transparency and alignment by communicating project progress, updates, and any issues or blockers}
             \resumeroleitem{Maintained clear and open lines of communication, enabling stakeholders to make informed decisions and ensuring project success}
-            \resumeroleitem{Anticipated potential development challenges, identified project delays, and swiftly addressed issues; mitigated risks, minimized project delays, and ensured on-time delivery}
+            \resumeroleitem{Anticipated potential development challenges, identified project delays, and swiftly addressed issues}
             \resumeroleitem{Mentored engineers to improve proficiency and expertise in best practices}
-            \resumeroleitem{Orchestrated team of 7-9 engineers in PagerDuty rotation, guaranteeing round-the-clock operational effectiveness and reducing incident response time by 40\%}
+            \resumeroleitem{Orchestrated team of 7-9 engineers in PagerDuty rotation, improving reliability and reducing incident response time}
             \resumeroleitem{Led team in overcoming complex technical challenges, removing impediments, and ensuring smooth project execution}
-            \resumeroleitem{Hired two Senior Software Engineers and Software Quality Architect; drafted job descriptions, conducted technical interviews, and made final hiring recommendations}
+            \resumeroleitem{Hired multiple Senior Software Engineers and a Software Quality Architect; drafted job descriptions, conducted technical interviews, and made final hiring recommendations}
           }
         }% End CMS Tech Lead Role
 
         % CMS DevOps Engineer Role
         \resumerole{Senior DevOps Engineer}{VA.gov Platform CMS Team}{October 2020 -- February 2024}{%
           \resumeroleitems{%
-            \resumeroleitem{Led the implementation of industry QA architecture best practices, resulting in a 20\% improvement in overall product quality and customer satisfaction, while meeting regulatory standards and compliance requirements}
-            \resumeroleitem{Collaborated closely with cross-functional product teams to align technical strategies with business goals, driving continuous improvement across the organization}
-            \resumeroleitem{Mentored engineers on advanced test and system design techniques, driving team-wide adoption and increasing overall testing efficiency by 30\%, while aligning technical strategies with organizational objectives}
-            \resumeroleitem{Crafted and documented procedures, including timelines and sample communications for consistent management of out-of-band deploys, reducing procedure duration by approximately 50\%}
-            \resumeroleitem{Directed ongoing enhancement and deployment of Drupal CMS and associated infrastructure for VA.gov website, catering to approximately 14M visitors and 26M visits monthly}
-            \resumeroleitem{Revamped internal content release management system, resulting in 60\% reduction in Change Failure Rate}
-            \resumeroleitem{Slashed CMS product delivery lead time by 30\% and CI lead times by 60\%}
+            \resumeroleitem{Improved QA architecture, improving overall product quality and customer satisfaction}
+            \resumeroleitem{Mentored engineers on test design and system architecture}
+            \resumeroleitem{Crafted and documented procedures, including timelines and sample communications, for consistent management of out-of-band deploys}
+            \resumeroleitem{Revamped internal content release management system, significantly reducing change failure rate}
+            \resumeroleitem{Streamlined test pipeline, reducing test time and product delivery lead time}
+            \resumeroleitem{Developed and maintained custom modules for Drupal 8/9/10 CMS}
           }
         }% End CMS DevOps Engineer Role
       } % End roles at Agile Six
@@ -211,13 +214,13 @@
         % Senior Software/DevOps Engineer Role
         \resumerole{Senior Software/DevOps Engineer}{ainonline.com}{January 2015 -- October 2020}{%
           \resumeroleitems{%
-            \resumeroleitem{Architected and executed an innovative DevOps and backend development strategy, leading to the successful launch of two transformative media products}
-            \resumeroleitem{Implemented local development environments, CI/CD pipelines, and cutting-edge QA methodologies, resulting in a 35\% decrease in production bugs and a 25\% improvement in team collaboration and efficiency}
-            \resumeroleitem{Guided and mentored junior engineers, emphasizing soft skills and engineering best practices, leading to a 30\% increase in overall team productivity and timely delivery of key milestones}
-            \resumeroleitem{Instituted CD pipeline, including functional tests and staging deployment, resulting in 33\% decrease in Change Failure Rate}
-            \resumeroleitem{Created a Vagrant-based solution for local development; increased team productivity by 30\% and enabled rapid iteration and testing of new features}
-            \resumeroleitem{Developed an app to centralize ad sales, subscriptions, and circulation data; this reduced manual data entry by 80\%, saved management and sales teams 20 hours per week, and empowered data-driven decision-making}
-            \resumeroleitem{Architected CI pipeline, encompassing unit tests, static analysis, and code style tests, yielding 30\% decrease in Change Failure Rate}
+            \resumeroleitem{Architected and executed an innovative DevOps and backend development strategy, supporting the launch of two successful media products}
+            \resumeroleitem{Implemented local development environments, CI/CD pipelines, and QA best practices}
+            \resumeroleitem{Guided and mentored junior engineers, emphasizing soft skills and engineering best practices}
+            \resumeroleitem{Instituted CD pipeline, including functional tests and staging deployment}
+            \resumeroleitem{Created a Vagrant-based solution for local development, increasing team productivity and streamlining development and testing of new features}
+            \resumeroleitem{Developed an app to centralize ad sales, subscriptions, and circulation data, reducing manual data entry and empowering data-driven decision-making}
+            \resumeroleitem{Architected CI pipeline, encompassing unit tests, static analysis, and code style tests}
             \resumeroleitem{Migrated systems from Acquia hosting to sustainable, self-servicing AWS, cutting infrastructure expenses by over two-thirds and reducing annual hosting costs by 40\%}
           }
         }% End Senior Software/DevOps Engineer Role
@@ -235,9 +238,9 @@
             \resumeroleitem{Developed, launched, and maintained proprietary sync technologies for flagship macOS/iOS desktop document database app}
             \resumeroleitem{Collaborated and communicated within a globally dispersed engineering department across six countries and four continents}
             \resumeroleitem{Led the adoption of Agile project management, Lean principles, and DevOps methodologies}
-            \resumeroleitem{Introduced CI/CD pipelines, resulting in 90\% decrease in delivery lead time and eradicating delivery and packaging errors}
-            \resumeroleitem{Introduced automated testing, leading to 30\% reduction in manual testing hours, elevating test coverage to 70\%, and cutting change failure rate by 30\%}
-            \resumeroleitem{Automated aspects of certificate and configuration management, culminating in savings of 120 person-hours annually}
+            \resumeroleitem{Introduced CI/CD pipelines, resulting in a significant decrease in delivery lead time and eradicating delivery and packaging errors}
+            \resumeroleitem{Introduced automated testing, leading to a large reduction in manual testing hours, elevating test coverage, and cutting change failure rate}
+            \resumeroleitem{Automated aspects of certificate and configuration management, saving several person-days annually}
           }
         }% End Software Engineer Role
       } % End roles at DEVONtechnologies
@@ -250,8 +253,23 @@
 \newcommand{\myeducation}{%
   \noindent\textbf{\href{https://www.unlv.edu}{University of Nevada at Las Vegas}} (Las Vegas, NV)
   \begin{itemize}
-    \item Bachelor's in Computer Science \hfill May 2009 -- December 2011
+    \resumestudy{Bachelor's in Computer Science}{May 2009 -- December 2011}{%
+      \pdfnewline - Graduated with a 3.5 GPA
+      \pdfnewline - Took graduate-level coursework in Artificial Intelligence
+      \pdfnewline - Completed an independent study in Virtual Machine design and implementation, and gave a guest lecture on the topic
+    }
   \end{itemize}
+}
+
+% Define a degree and period of study.
+\newcommand{\resumestudy}[3]{%
+  \BeginAccSupp{
+    method=pdfstringdef,
+    unicode,
+    ActualText={\pdfnewline I earned a #1 after attending #2. #3 \pdfnewline}
+  }
+  \item #1 \hfill #2
+  \EndAccSupp{}
 }
 
 % Define a list of skill areas.
@@ -273,7 +291,7 @@
   \BeginAccSupp{
     method=pdfstringdef,
     unicode,
-    ActualText={\pdfnewline #3 years of experience in #2 \pdfnewline #2 projects: #4}
+    ActualText={\pdfnewline #3 years of experience in #2 \pdfnewline #2 projects: #4 \pdfnewline }
   }
   \normalfont #1
   \EndAccSupp{}
