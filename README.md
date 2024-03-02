@@ -8,6 +8,9 @@ If you're looking for information about me (Nathan Douglas), my [GitHub profile]
 
 If you're looking for an actual copy of my general, honest-to-$DEITY résumé, check [GitHub Pages](https://ndouglas.github.io/resume/resume.pdf).
 
+![How a Programmer Reads Your Résumé](./images/resume_comic.png)
+Credit: [Steve Hanov](http://stevehanov.ca/blog/index.php?id=56).
+
 ## Frequently Asked Questions
 
 ### Why?
