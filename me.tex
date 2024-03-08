@@ -17,6 +17,10 @@
 %   - "software" -- Software Engineer
 \input{params.tex}
 
+% Improve PDF character handling.
+\input{glyphtounicode}
+\pdfgentounicode=1
+
 % Define new column types.
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
@@ -34,8 +38,8 @@
   urlcolor=MyGrayLink,%
 }
 
-% A variadic command to define a command with a variable number of arguments.
-\newcommand{\Variadic}[6]{%
+% Define a command with a variable number of arguments.
+\newcommand{\VariadicCommand}[6]{%
   \expandafter\newcommand\csname Gobble#1Arg\endcsname[2]{%
     \csname Check#1Arg\endcsname{##1#4##2}%
   }%
@@ -48,16 +52,7 @@
 }
 
 % Define a new list type for a comma-separated list.
-\newboolean{CSLFirstItem}
-\newenvironment{CommaSeparatedList}
-{% Initialization
-  \setboolean{CSLFirstItem}{true}% Flag to track the first item
-  \renewcommand\item{%
-              \ifthenelse{\boolean{CSLFirstItem}}%
-              {\setboolean{CSLFirstItem}{false}}% First item, do not print comma, switch flag off
-              {\unskip, }% Not the first item, print comma
-        }%
-}{}
+\VariadicCommand{CommaSeparatedList}{}{}{, }{}{}
 
 % A PDF command to insert a newline.
 \newcommand{\PDFNewline}{^^J}
@@ -74,7 +69,8 @@
     method=pdfstringdef,
     space=true,
     ActualText={\PDFNewline Email: \MyEmail}
-  }\normalfont \ContactInfoItem{\faAt}{mailto:\MyEmail}{\MyEmail}
+  }%
+  \normalfont\ContactInfoItem{\faAt}{mailto:\MyEmail}{\MyEmail}
   \EndAccSupp{}
 }
 
@@ -83,7 +79,8 @@
   \BeginAccSupp{
     method=pdfstringdef,
     ActualText={\PDFNewline Phone: \MyPhoneNumber}
-  }\normalfont \ContactInfoItem{\faPhone}{tel:\MyPhoneNumberPlain}{\MyPhoneNumber}
+  }%
+  \normalfont\ContactInfoItem{\faPhone}{tel:\MyPhoneNumberPlain}{\MyPhoneNumber}
   \EndAccSupp{}
 }
 
@@ -93,7 +90,8 @@
   \BeginAccSupp{
     method=pdfstringdef,
     ActualText={\PDFNewline Website: \MyWebsiteUrl}
-  }\normalfont \ContactInfoItem{\faGlobe}{\MyWebsiteUrl}{\MyWebsite}
+  }%
+  \normalfont\ContactInfoItem{\faGlobe}{\MyWebsiteUrl}{\MyWebsite}
   \EndAccSupp{}
 }
 
@@ -103,7 +101,8 @@
   \BeginAccSupp{
     method=pdfstringdef,
     ActualText={\PDFNewline LinkedIn: \MyLinkedInUrl}
-  }\normalfont \ContactInfoItem{\faLinkedin}{\MyLinkedInUrl}{\MyLinkedInUsername}
+  }%
+  \normalfont\ContactInfoItem{\faLinkedin}{\MyLinkedInUrl}{\MyLinkedInUsername}
   \EndAccSupp{}
 }
 
@@ -113,20 +112,16 @@
   \BeginAccSupp{
     method=pdfstringdef,
     ActualText={\PDFNewline GitHub: \MyGitHubUrl}
-  }\normalfont \ContactInfoItem{\faGithub}{\MyGitHubUrl}{\MyGitHubUsername}
+  }%
+  \normalfont\ContactInfoItem{\faGithub}{\MyGitHubUrl}{\MyGitHubUsername}
   \EndAccSupp{}
-}
-
-% My name, linked to my website.
-\newcommand{\MyHeaderName}{%
-  \Huge\bfseries\MyFullName
 }
 
 % My contact information is a list of contact items, separated by bullet points
 % when they occur in the same line, and separated by newlines when they occur
 % on different lines.
 \newcommand{\MyContactInfo}{%
-  \raggedleft \small
+  \raggedleft\small
   \MyEmailContactInfoItem \ContactInfoItemseparator \MyPhoneContactInfoItem \\
   \MyWebsiteContactInfoItem \ContactInfoItemseparator \MyLinkedInContactInfoItem \ContactInfoItemseparator \MyGitHubContactInfoItem %
 }
@@ -134,22 +129,18 @@
 % Define my header.
 \newcommand{\MyHeader}{%
   \noindent\begin{tabularx}{\textwidth}{@{}L R@{}}
-    \MyHeaderName & \vspace{-1.75em}\MyContactInfo \\
+    \Huge\bfseries\MyFullName & \vspace{-1.75em}\MyContactInfo \\
   \end{tabularx}\vspace{-0.1in}\hrule
 }
 
-% Define a list of employers and periods of employment.
-% This will be a list of items, each of which is a resumeemployer command.
-\newcommand{\resumeemployers}[1]{%
-  \begin{itemize}
-    #1
-  \end{itemize}
-}
+% Define a list of periods of employment.
+% This will be a list of items, each of which is a MyEmployment command.
+\VariadicCommand{MyEmployments}{\begin{itemize}}{}{}{}{\end{itemize}}
 
 % Define an employer and period of employment.
 % This is a two-column table with the employer on the left and the period of
 % employment on the right.
-\newcommand{\resumeemployer}[2]{%
+\newcommand{\MyEmployment}[2]{%
   \item\noindent\begin{tabularx}{\linewidth}{@{}L R@{}}
     \textbf{#1} & #2 \\
   \end{tabularx}\vspace{-4pt}
@@ -157,112 +148,104 @@
 
 % Define a list of roles at a given employer.
 % This will be a list of items, each of which is a resumerole command.
-\newcommand{\resumeroles}[1]{%
-  \begin{itemize}[leftmargin=0pt, noitemsep, nosep, label={}]
-    \item \small #1
-  \end{itemize}
-}
+\VariadicCommand{MyRoles}{\begin{itemize}[leftmargin=0pt, noitemsep, nosep, label={}]}{}{}{}{\end{itemize}}
 
 % Define a job title, project, and period of position.
 % This is a two-column table with the job title on the left, project name in
 % parentheses, and the period of the position on the right.
-\newcommand{\resumerole}[3]{%
-  #1 (#2; #3)
+\newcommand{\MyRole}[3]{%
+  \item\small #1 (#2; #3)
 }
 
 % Define a list of resume role items within a given role.
-% This will be a list of items, each of which is a resumeroleitem command.
-\newcommand{\resumeroleitems}[1]{%
-  \begin{itemize}
-    #1
-  \end{itemize}\vspace{6pt}
-}
+% This will be a list of items, each of which is a MyRoleItem command.
+\VariadicCommand{MyRoleItems}{\begin{itemize}}{}{}{}{\end{itemize}\vspace{6pt}}
 
 % An item in a list.
-\newcommand{\resumeroleitem}[1]{%
+\newcommand{\MyRoleItem}[1]{%
   \item \footnotesize #1 \vspace{-2pt}
 }
 
 % Define my experience
 \newcommand{\MyExperience}{%
   % Begin experience list
-  \resumeemployers{%
+  \MyEmployments{%
     % Begin Agile Six
-    \resumeemployer{\href{https://agile6.com}{Agile Six Applications, Inc.}}{October 2020 -- Present}
+    \MyEmployment{\href{https://agile6.com}{Agile Six Applications, Inc.}}{October 2020 -- Present}
     {% Begin roles at Agile Six
-      \resumeroles{% List of roles at Agile Six
+      \MyRoles{% List of roles at Agile Six
 
         % CIE DevOps Engineer Role
-        \resumerole{Senior DevOps Engineer}{VA.gov Check-In Experience Team}{February 2024 -- Present}{%
-          \resumeroleitems{%
-            \resumeroleitem{Haven't blown anything up yet}
-            \resumeroleitem{Served on a task force to improve hiring practices for DevOps engineers}
+        \MyRole{Senior DevOps Engineer}{VA.gov Check-In Experience Team}{February 2024 -- Present}{%
+          \MyRoleItems{%
+            \MyRoleItem{Haven't blown anything up yet}
+            \MyRoleItem{Served on a task force to improve hiring practices for DevOps engineers}
           } % End CIE DevOps Engineer role items.
         } % End CIE DevOps Engineer Role
 
         % CMS Tech Lead Role
-        \resumerole{Technical Lead}{VA.gov Platform CMS Team}{July 2023 -- February 2024}{%
-          \resumeroleitems{%
-            \resumeroleitem{Directed ongoing enhancement and deployment of Drupal CMS and associated infrastructure for VA.gov}
-            \resumeroleitem{Fostered transparency and alignment by communicating project progress, updates, and any issues or blockers}
-            \resumeroleitem{Maintained clear and open lines of communication, enabling stakeholders to make informed decisions and ensuring project success}
-            \resumeroleitem{Anticipated potential development challenges, identified project delays, and swiftly addressed issues}
-            \resumeroleitem{Mentored engineers to improve proficiency and expertise in best practices}
-            \resumeroleitem{Orchestrated team of 7-9 engineers in PagerDuty rotation, improving reliability and reducing incident response time}
-            \resumeroleitem{Led team in overcoming complex technical challenges, removing impediments, and ensuring smooth project execution}
-            \resumeroleitem{Hired multiple Senior Software Engineers and a Software Quality Architect; drafted job descriptions, conducted technical interviews, and made final hiring recommendations}
+        \MyRole{Technical Lead}{VA.gov Platform CMS Team}{July 2023 -- February 2024}{%
+          \MyRoleItems{%
+            \MyRoleItem{Directed ongoing enhancement and deployment of Drupal CMS and associated infrastructure for VA.gov}
+            \MyRoleItem{Fostered transparency and alignment by communicating project progress, updates, and any issues or blockers}
+            \MyRoleItem{Maintained clear and open lines of communication, enabling stakeholders to make informed decisions and ensuring project success}
+            \MyRoleItem{Anticipated potential development challenges, identified project delays, and swiftly addressed issues}
+            \MyRoleItem{Mentored engineers to improve proficiency and expertise in best practices}
+            \MyRoleItem{Orchestrated team of 7-9 engineers in PagerDuty rotation, improving reliability and reducing incident response time}
+            \MyRoleItem{Led team in overcoming complex technical challenges, removing impediments, and ensuring smooth project execution}
+            \MyRoleItem{Hired multiple Senior Software Engineers and a Software Quality Architect; drafted job descriptions, conducted technical interviews, and made final hiring recommendations}
           }
         }% End CMS Tech Lead Role
 
         % CMS DevOps Engineer Role
-        \resumerole{Senior DevOps Engineer}{VA.gov Platform CMS Team}{October 2020 -- February 2024}{%
-          \resumeroleitems{%
-            \resumeroleitem{Improved QA architecture, improving overall product quality and customer satisfaction}
-            \resumeroleitem{Mentored engineers on test design and system architecture}
-            \resumeroleitem{Crafted and documented procedures, including timelines and sample communications, for consistent management of out-of-band deploys}
-            \resumeroleitem{Revamped internal content release management system, significantly reducing change failure rate}
-            \resumeroleitem{Streamlined test pipeline, reducing test time and product delivery lead time}
-            \resumeroleitem{Developed and maintained custom modules for Drupal 8/9/10 CMS}
+        \MyRole{Senior DevOps Engineer}{VA.gov Platform CMS Team}{October 2020 -- February 2024}{%
+          \MyRoleItems{%
+            \MyRoleItem{Improved QA architecture, improving overall product quality and customer satisfaction}
+            \MyRoleItem{Mentored engineers on test design and system architecture}
+            \MyRoleItem{Crafted and documented procedures, including timelines and sample communications, for consistent management of out-of-band deploys}
+            \MyRoleItem{Revamped internal content release management system, significantly reducing change failure rate}
+            \MyRoleItem{Streamlined test pipeline, reducing test time and product delivery lead time}
+            \MyRoleItem{Developed and maintained custom modules for Drupal 8/9/10 CMS}
           }
         }% End CMS DevOps Engineer Role
       } % End roles at Agile Six
     }% End Agile Six
 
     % Begin Aviation International News
-    \resumeemployer{\href{https://www.ainonline.com/}{Aviation International News}}{January 2015 -- October 2020}
+    \MyEmployment{\href{https://www.ainonline.com/}{Aviation International News}}{January 2015 -- October 2020}
     {% Begin roles at Aviation International News
-      \resumeroles{% List of roles at Aviation International News
+      \MyRoles{% List of roles at Aviation International News
 
         % Senior Software/DevOps Engineer Role
-        \resumerole{Senior Software/DevOps Engineer}{ainonline.com}{January 2015 -- October 2020}{%
-          \resumeroleitems{%
-            \resumeroleitem{Architected and executed an innovative DevOps and backend development strategy, supporting the launch of two successful media products}
-            \resumeroleitem{Implemented local development environments, CI/CD pipelines, and QA best practices}
-            \resumeroleitem{Guided and mentored junior engineers, emphasizing soft skills and engineering best practices}
-            \resumeroleitem{Instituted CD pipeline, including functional tests and staging deployment}
-            \resumeroleitem{Created a Vagrant-based solution for local development, increasing team productivity and streamlining development and testing of new features}
-            \resumeroleitem{Developed an app to centralize ad sales, subscriptions, and circulation data, reducing manual data entry and empowering data-driven decision-making}
-            \resumeroleitem{Architected CI pipeline, encompassing unit tests, static analysis, and code style tests}
-            \resumeroleitem{Migrated systems from Acquia hosting to sustainable, self-servicing AWS, cutting infrastructure expenses by over two-thirds and reducing annual hosting costs by 40\%}
+        \MyRole{Senior Software/DevOps Engineer}{ainonline.com}{January 2015 -- October 2020}{%
+          \MyRoleItems{%
+            \MyRoleItem{Architected and executed an innovative DevOps and backend development strategy, supporting the launch of two successful media products}
+            \MyRoleItem{Implemented local development environments, CI/CD pipelines, and QA best practices}
+            \MyRoleItem{Guided and mentored junior engineers, emphasizing soft skills and engineering best practices}
+            \MyRoleItem{Instituted CD pipeline, including functional tests and staging deployment}
+            \MyRoleItem{Created a Vagrant-based solution for local development, increasing team productivity and streamlining development and testing of new features}
+            \MyRoleItem{Developed an app to centralize ad sales, subscriptions, and circulation data, reducing manual data entry and empowering data-driven decision-making}
+            \MyRoleItem{Architected CI pipeline, encompassing unit tests, static analysis, and code style tests}
+            \MyRoleItem{Migrated systems from Acquia hosting to sustainable, self-servicing AWS, cutting infrastructure expenses by over two-thirds and reducing annual hosting costs by 40\%}
           }
         }% End Senior Software/DevOps Engineer Role
       } % End roles at Aviation International News
     }% End Aviation International News
 
     % Begin DEVONtechnologies
-    \resumeemployer{\href{https://www.devontechnologies.com/}{DEVONtechnologies}}{January 2011 -- December 2015}
+    \MyEmployment{\href{https://www.devontechnologies.com/}{DEVONtechnologies}}{January 2011 -- December 2015}
     {% Begin roles at DEVONtechnologies
-      \resumeroles{% List of roles at DEVONtechnologies
+      \MyRoles{% List of roles at DEVONtechnologies
 
         % Software Engineer Role
-        \resumerole{Software Engineer}{DEVONthink Sync}{January 2011 -- December 2015}{%
-          \resumeroleitems{%
-            \resumeroleitem{Developed, launched, and maintained proprietary sync technologies for flagship macOS/iOS desktop document database app}
-            \resumeroleitem{Collaborated and communicated within a globally dispersed engineering department across six countries and four continents}
-            \resumeroleitem{Led the adoption of Agile project management, Lean principles, and DevOps methodologies}
-            \resumeroleitem{Introduced CI/CD pipelines, resulting in a significant decrease in delivery lead time and eradicating delivery and packaging errors}
-            \resumeroleitem{Introduced automated testing, leading to a large reduction in manual testing hours, elevating test coverage, and cutting change failure rate}
-            \resumeroleitem{Automated aspects of certificate and configuration management, saving several person-days annually}
+        \MyRole{Software Engineer}{DEVONthink Sync}{January 2011 -- December 2015}{%
+          \MyRoleItems{%
+            \MyRoleItem{Developed, launched, and maintained proprietary sync technologies for flagship macOS/iOS desktop document database app}
+            \MyRoleItem{Collaborated and communicated within a globally dispersed engineering department across six countries and four continents}
+            \MyRoleItem{Led the adoption of Agile project management, Lean principles, and DevOps methodologies}
+            \MyRoleItem{Introduced CI/CD pipelines, resulting in a significant decrease in delivery lead time and eradicating delivery and packaging errors}
+            \MyRoleItem{Introduced automated testing, leading to a large reduction in manual testing hours, elevating test coverage, and cutting change failure rate}
+            \MyRoleItem{Automated aspects of certificate and configuration management, saving several person-days annually}
           }
         }% End Software Engineer Role
       } % End roles at DEVONtechnologies
@@ -272,7 +255,7 @@
 }% End experience section
 
 % Define a degree and period of study.
-\newcommand{\resumestudy}[4]{%
+\newcommand{\MyDegree}[4]{%
   \BeginAccSupp{
     method=pdfstringdef,
     unicode,
@@ -282,32 +265,48 @@
   \EndAccSupp{}
 }
 
+% Define an item in a list of degree details.
+\newcommand{\MyDegreeDetail}[1]{%
+  \item #1
+}
+
+% Define a list of degree details.
+% This will be a list of items, each of which is a MyDegreeDetail command.
+\VariadicCommand{MyDegreeDetails}{\begin{itemize}[leftmargin=0pt, noitemsep, nosep, label={}]}{}{}{}{\end{itemize}}
+
 % Define my education
 \newcommand{\MyEducation}{%
-  \resumestudy{Bachelor's in Computer Science}{University of Nevada at Las Vegas}{May 2009 -- December 2011}{%
-    \PDFNewline - Graduated with a 3.5 GPA
-    \PDFNewline - Took graduate-level coursework in Artificial Intelligence
-    \PDFNewline - Completed an independent study in Virtual Machine design and implementation, and gave a guest lecture on the topic
-  }
+  \MyDegree{Bachelor's in Computer Science}{University of Nevada at Las Vegas}{May 2009 -- December 2011}{%
+    \MyDegreeDetails{% List of degree details
+      \MyDegreeDetail{Graduated with a 3.5 GPA}
+      \MyDegreeDetail{Took graduate-level coursework in Artificial Intelligence}
+      \MyDegreeDetail{Completed an independent study in Virtual Machine design and implementation, and gave a guest lecture on the topic}
+    }% End degree details
+  }% End Bachelor's in Computer Science
 }
 
 % Define a list of skill areas.
 % This will be a list of items, each of which is a resumeskillarea command.
-\newcommand{\resumeskillareas}[1]{%
-  \begin{itemize}[leftmargin=0pt, noitemsep, nosep, label={}]
-    #1
-  \end{itemize}
-}
+\VariadicCommand{MySkillAreas}{\begin{itemize}[leftmargin=0pt, noitemsep, nosep, label={}]}{}{}{}{\end{itemize}}
 
 % Define a skill area and its skills.
-\newcommand{\resumeskillarea}[2]{%
-  \item \small\textbf{#1}: \begin{CommaSeparatedList}#2\end{CommaSeparatedList}
+\newcommand{\MySkillArea}[2]{%
+  \item \small\textbf{#1}: #2
+}
+
+% Define a list of skill items.
+% This will be a list of items, each of which is a MySkillItem command.
+\VariadicCommand{MySkillItems}{}{}{, }{}{}
+
+% Define a skill item.
+\newcommand{\MySkillItem}[1]{%
+  #1
 }
 
 % Define a resume skill language.
 % Each language is a language name, years of experience, and list of projects.
-\newcommand{\resumeskilllanguage}[4]{%
-  \item\BeginAccSupp{
+\newcommand{\MyLanguageSkill}[4]{%
+  \BeginAccSupp{
     method=pdfstringdef,
     unicode,
     ActualText={\PDFNewline #3 years of experience in #2 \PDFNewline #2 projects: #4 \PDFNewline}
@@ -341,76 +340,46 @@
 % Define my skills
 \newcommand{\MySkills}{%
   % Begin skill areas list
-  \resumeskillareas{%
-    \resumeskillarea{Languages}{%
-      % Python, JavaScript, PHP, Ruby, Java, C\#, C++, C, Swift, Objective-C, Bash, SQL, HTML, CSS, XML, JSON, YAML,
-      \resumeskilllanguage{PHP}{PHP}{9}{%
-        \PDFNewline - VA.gov CMS (https://www.va.gov/) (2020-2024): I developed and maintained the backend for a major government website, including custom code for a Drupal 8/9/10 CMS.
-        \PDFNewline - AINonline (https://www.ainonline.com/) (2016-2020): I developed and maintained the backend for an aviation news website, including custom code for a Drupal 7 CMS, ad sales, a custom newsletter generator, and subscription management.
-        \PDFNewline - BJTonline (https://www.bjtonline.com/) (2016-2020): I developed and maintained the backend for a business aviation news website, including custom code for a Drupal 7 CMS, ad sales, and subscription management.
-        \PDFNewline - FutureFlight (https://www.futureflight.aero/) (2019-2020): I developed and maintained the backend for an aviation news website, including custom code for a Drupal 8 CMS, a custom newsletter generator, and subscription management.
+  \MySkillAreas{%
+    \MySkillArea{Languages}{%
+      \MySkillItems{%
+        % Python, JavaScript, PHP, Ruby, Java, C\#, C++, C, Swift, Objective-C, Bash, SQL, HTML, CSS, XML, JSON, YAML,
+        \MyLanguageSkill{PHP}{PHP}{9}{%
+          \PDFNewline - VA.gov CMS (https://www.va.gov/) (2020-2024): I developed and maintained the backend for a major government website, including custom code for a Drupal 8/9/10 CMS.
+          \PDFNewline - AINonline (https://www.ainonline.com/) (2016-2020): I developed and maintained the backend for an aviation news website, including custom code for a Drupal 7 CMS, ad sales, a custom newsletter generator, and subscription management.
+          \PDFNewline - BJTonline (https://www.bjtonline.com/) (2016-2020): I developed and maintained the backend for a business aviation news website, including custom code for a Drupal 7 CMS, ad sales, and subscription management.
+          \PDFNewline - FutureFlight (https://www.futureflight.aero/) (2019-2020): I developed and maintained the backend for an aviation news website, including custom code for a Drupal 8 CMS, a custom newsletter generator, and subscription management.
+        }%
+      }{
+        \MyLanguageSkill{Objective-C}{Objective-C}{4}{%
+          \PDFNewline - DEVONthink Pro Sync (https://devontechnologies.com/) (2012-2015): I developed and maintained the sync engine for a macOS/iOS desktop document database app.
+        }%
+      }{
+        \MyLanguageSkill{\LaTeX{}}{LaTeX}{1}{%
+          \PDFNewline - Resume (https://github.com/ndouglas/resume) (2024-): I rewrote my resume in LaTeX to improve its maintainability and my ability to fine-tune it for individual job descriptions.
+        }%
       }
-      \resumeskilllanguage{Objective-C}{Objective-C}{4}{%
-        \PDFNewline - DEVONthink Pro Sync (https://devontechnologies.com/) (2012-2015): I developed and maintained the sync engine for a macOS/iOS desktop document database app.
-      }
-      \resumeskilllanguage{\LaTeX{}}{LaTeX}{1}{%
-        \PDFNewline - Resume (https://github.com/ndouglas/resume) (2024-): I rewrote my resume in LaTeX to improve its maintainability and my ability to fine-tune it for individual job descriptions.
-      }
     }
-    \resumeskillarea{Infrastructure-as-Code}{%
-      \item Terraform
-      \item CloudFormation
-      \item Ansible
-      \item Puppet
-      \item Chef
-      \item SaltStack
+    \MySkillArea{Infrastructure-as-Code}{%
+      \MySkillItems{Terraform}{CloudFormation}{Ansible}{Puppet}{Chef}{SaltStack}
     }
-    \resumeskillarea{CI/CD}{%
-      \item Jenkins
-      \item GitHub Actions
-      \item CircleCI
-      \item Travis CI
-      \item GitLab CI
-      \item Bitbucket Pipelines
+    \MySkillArea{CI/CD}{%
+      \MySkillItems{Jenkins}{GitHub Actions}{CircleCI}{Travis CI}{GitLab CI}{Bitbucket Pipelines}
     }
-    \resumeskillarea{Containerization}{%
-      \item Docker
-      \item Kubernetes
-      \item Nomad
-      \item Amazon ECS
-      \item Amazon EKS
+    \MySkillArea{Containerization}{%
+      \MySkillItems{Docker}{Kubernetes}{Nomad}{Amazon ECS}{Amazon EKS}
     }
-    \resumeskillarea{Cloud Platforms}{%
-      \item Amazon Web Services
-      \item Google Cloud Platform
-      \item Microsoft Azure
+    \MySkillArea{Cloud Platforms}{%
+      \MySkillItems{Amazon Web Services}{Google Cloud Platform}{Microsoft Azure}{IBM Cloud}{Oracle Cloud}
     }
-    \resumeskillarea{Monitoring}{%
-      \item Prometheus
-      \item Grafana
-      \item Datadog
-      \item New Relic
-      \item Amazon CloudWatch
+    \MySkillArea{Monitoring}{%
+      \MySkillItems{Prometheus}{Grafana}{Datadog}{New Relic}{Amazon CloudWatch}
     }
-    \resumeskillarea{Logging}{%
-      \item Elasticsearch
-      \item Logstash
-      \item Kibana
-      \item Splunk
-      \item Sumo Logic
+    \MySkillArea{Logging}{%
+      \MySkillItems{Elasticsearch}{Logstash}{Kibana}{Splunk}{Sumo Logic}
     }
-    \resumeskillarea{Networking}{%
-      \item TCP/IP
-      \item DNS
-      \item HTTP
-      \item HTTPS
-      \item VPN
-      \item VPC
-      \item Route 53
-      \item CloudFront
-      \item ELB
-      \item ALB
-      \item NLB
+    \MySkillArea{Networking}{%
+      \MySkillItems{TCP/IP}{DNS}{HTTP}{HTTPS}{VPN}{VPC}{Route 53}{CloudFront}{ELB}{ALB}{NLB}
     }
   }
 }
