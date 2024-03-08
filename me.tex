@@ -6,8 +6,10 @@
 \usepackage{ifthen}
 \usepackage{fontawesome5}
 \usepackage[pdftex]{hyperref}
+\usepackage{relsize}
 \usepackage{tabularx}
 \usepackage{xifthen}
+\usepackage{xparse}
 
 % Read parameters.
 % This defines the following variables:
@@ -38,6 +40,25 @@
   urlcolor=MyGrayLink,%
 }
 
+% Define an string that may provide a different, more accessible version.
+\NewDocumentCommand{\AccessibleString}{mm}{%
+  % #1: first argument
+  % #2: second argument, which may be empty
+  \ifx\empty#2\empty
+    \BeginAccSupp{
+      method=pdfstringdef,
+      unicode,
+      ActualText={#1}
+    }#1\EndAccSupp{}
+  \else
+    \BeginAccSupp{
+      method=pdfstringdef,
+      unicode,
+      ActualText={#2}
+    }#1\EndAccSupp{}
+  \fi
+}
+
 % Define a command with a variable number of arguments.
 \newcommand{\VariadicCommand}[6]{%
   \expandafter\newcommand\csname Gobble#1Arg\endcsname[2]{%
@@ -51,6 +72,9 @@
   }%
 }
 
+% Make C++ look good.
+\newcommand{\Cpp}{C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize\bf ++}}
+
 % Define a new list type for a comma-separated list.
 \VariadicCommand{CommaSeparatedList}{}{}{, }{}{}
 
@@ -60,70 +84,43 @@
 % Define a command for a contact info item.
 \newcommand{\ContactInfoItem}[3]{#1\hspace{0.5em}\href{#2}{#3}}
 
-% Define a command to separate contact items.
-\newcommand{\ContactInfoItemseparator}{\hspace{1em}}
-
 % My email address contact info item.
 \newcommand{\MyEmailContactInfoItem}{%
-  \BeginAccSupp{
-    method=pdfstringdef,
-    space=true,
-    ActualText={\PDFNewline Email: \MyEmail}
-  }%
-  \normalfont\ContactInfoItem{\faAt}{mailto:\MyEmail}{\MyEmail}
-  \EndAccSupp{}
+  \AccessibleString{\normalfont\ContactInfoItem{\faAt}{mailto:\MyEmail}{\MyEmail}}{\PDFNewline Email: \MyEmail}
 }
 
 % Phone number contact info item.
 \newcommand{\MyPhoneContactInfoItem}{%
-  \BeginAccSupp{
-    method=pdfstringdef,
-    ActualText={\PDFNewline Phone: \MyPhoneNumber}
-  }%
-  \normalfont\ContactInfoItem{\faPhone}{tel:\MyPhoneNumberPlain}{\MyPhoneNumber}
-  \EndAccSupp{}
+  \AccessibleString{\normalfont\ContactInfoItem{\faPhone}{tel:\MyPhoneNumberPlain}{\MyPhoneNumber}}{\PDFNewline Phone: \MyPhoneNumber}
 }
 
 % Website contact info item.
-\newcommand{\MyWebsiteUrl}{https://\MyWebsite/}
 \newcommand{\MyWebsiteContactInfoItem}{%
-  \BeginAccSupp{
-    method=pdfstringdef,
-    ActualText={\PDFNewline Website: \MyWebsiteUrl}
-  }%
-  \normalfont\ContactInfoItem{\faGlobe}{\MyWebsiteUrl}{\MyWebsite}
-  \EndAccSupp{}
+  \newcommand{\MyWebsiteUrl}{https://\MyWebsite/}
+  \AccessibleString{\normalfont\ContactInfoItem{\faGlobe}{\MyWebsiteUrl}{\MyWebsite}}{\PDFNewline Website: \MyWebsiteUrl}
 }
 
 % LinkedIn supplemental commands.
-\newcommand{\MyLinkedInUrl}{https://www.linkedin.com/in/\MyLinkedInUsername/}
 \newcommand{\MyLinkedInContactInfoItem}{%
-  \BeginAccSupp{
-    method=pdfstringdef,
-    ActualText={\PDFNewline LinkedIn: \MyLinkedInUrl}
-  }%
-  \normalfont\ContactInfoItem{\faLinkedin}{\MyLinkedInUrl}{\MyLinkedInUsername}
-  \EndAccSupp{}
+  \newcommand{\MyLinkedInUrl}{https://www.linkedin.com/in/\MyLinkedInUsername/}
+  \AccessibleString{\normalfont\ContactInfoItem{\faLinkedin}{\MyLinkedInUrl}{\MyLinkedInUsername}}{\PDFNewline LinkedIn: \MyLinkedInUrl}
 }
 
 % GitHub supplemental commands.
-\newcommand{\MyGitHubUrl}{https://github.com/\MyGitHubUsername/}
 \newcommand{\MyGitHubContactInfoItem}{%
-  \BeginAccSupp{
-    method=pdfstringdef,
-    ActualText={\PDFNewline GitHub: \MyGitHubUrl}
-  }%
-  \normalfont\ContactInfoItem{\faGithub}{\MyGitHubUrl}{\MyGitHubUsername}
-  \EndAccSupp{}
+  \newcommand{\MyGitHubUrl}{https://github.com/\MyGitHubUsername/}
+  \AccessibleString{\normalfont\ContactInfoItem{\faGithub}{\MyGitHubUrl}{\MyGitHubUsername}}{\PDFNewline GitHub: \MyGitHubUrl}
 }
+
+% Define a list of contact info items.
+\VariadicCommand{MyContactInfoItems}{\raggedleft\small}{}{\hspace{.75em}}{}{}
 
 % My contact information is a list of contact items, separated by bullet points
 % when they occur in the same line, and separated by newlines when they occur
 % on different lines.
 \newcommand{\MyContactInfo}{%
-  \raggedleft\small
-  \MyEmailContactInfoItem \ContactInfoItemseparator \MyPhoneContactInfoItem \\
-  \MyWebsiteContactInfoItem \ContactInfoItemseparator \MyLinkedInContactInfoItem \ContactInfoItemseparator \MyGitHubContactInfoItem %
+  \MyContactInfoItems{\MyEmailContactInfoItem}{\MyPhoneContactInfoItem} \\
+  \MyContactInfoItems{\MyWebsiteContactInfoItem}{\MyLinkedInContactInfoItem}{\MyGitHubContactInfoItem}%
 }
 
 % Define my header.
@@ -259,28 +256,29 @@
   \BeginAccSupp{
     method=pdfstringdef,
     unicode,
-    ActualText={\PDFNewline I earned a #1 after attending #2 #3. \PDFNewline}
+    ActualText={\PDFNewline I earned a #1 after attending #2 #3. #4 \PDFNewline}
   }
-  #1 (#2; #3)
+  #1 (#2; #3) #4
   \EndAccSupp{}
 }
 
-% Define an item in a list of degree details.
-\newcommand{\MyDegreeDetail}[1]{%
-  \item #1
+\newcommand{\MyDegreeDetail}[2]{%
+  \item \small\AccessibleString{#1}{#2}
 }
 
 % Define a list of degree details.
 % This will be a list of items, each of which is a MyDegreeDetail command.
-\VariadicCommand{MyDegreeDetails}{\begin{itemize}[leftmargin=0pt, noitemsep, nosep, label={}]}{}{}{}{\end{itemize}}
+\VariadicCommand{MyDegreeDetails}{\begin{itemize}[noitemsep, nosep]}{}{}{}{\end{itemize}}
 
 % Define my education
 \newcommand{\MyEducation}{%
   \MyDegree{Bachelor's in Computer Science}{University of Nevada at Las Vegas}{May 2009 -- December 2011}{%
     \MyDegreeDetails{% List of degree details
-      \MyDegreeDetail{Graduated with a 3.5 GPA}
-      \MyDegreeDetail{Took graduate-level coursework in Artificial Intelligence}
-      \MyDegreeDetail{Completed an independent study in Virtual Machine design and implementation, and gave a guest lecture on the topic}
+      \MyDegreeDetail{Graduated with a 3.5 GPA}{}
+    }{%
+      \MyDegreeDetail{Took graduate-level coursework in Artificial Intelligence and Machine Learning}{}
+    }{%
+      \MyDegreeDetail{Completed an independent study in Virtual Machine design and implementation in \Cpp, and gave a guest lecture on the topic}{Completed an independent study in Virtual Machine design and implementation in C++, and gave a guest lecture on the topic}
     }% End degree details
   }% End Bachelor's in Computer Science
 }

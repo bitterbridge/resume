@@ -52,10 +52,10 @@ Software Engineer (DEVONthink Sync; January 2011 – December 2015)
 rate
 ∗ Automated aspects of certificate and configuration management, saving several person-days annually
 Education
-
-I earned a Bachelor's in Computer Science after attending University of Nevada at Las Vegas May 2009 – December 2011. 
-
-Skills
+Graduated with a 3.5 GPA
+Took graduate-level coursework in Artificial Intelligence and Machine Learning
+Completed an independent study in Virtual Machine design and implementation in C++, and gave a guest lecture on the topic
+Skills
 Languages: 
 9 years of experience in PHP 
 PHP projects: 
@@ -75,7 +75,7 @@ LaTeX projects:
 Infrastructure-as-Code: Terraform, CloudFormation, Ansible, Puppet, Chef, SaltStack
 CI/CD: Jenkins, GitHub Actions, CircleCI, Travis CI, GitLab CI, Bitbucket Pipelines
 Containerization: Docker, Kubernetes, Nomad, Amazon ECS, Amazon EKS
-Cloud Platforms: Amazon Web Services, Google Cloud Platform, Microsoft Azure
+Cloud Platforms: Amazon Web Services, Google Cloud Platform, Microsoft Azure, IBM Cloud, Oracle Cloud
 Monitoring: Prometheus, Grafana, Datadog, New Relic, Amazon CloudWatch
 Logging: Elasticsearch, Logstash, Kibana, Splunk, Sumo Logic
 Networking: TCP/IP, DNS, HTTP, HTTPS, VPN, VPC, Route 53, CloudFront, ELB, ALB, NLB
