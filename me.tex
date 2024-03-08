@@ -253,13 +253,7 @@
 
 % Define a degree and period of study.
 \newcommand{\MyDegree}[4]{%
-  \BeginAccSupp{
-    method=pdfstringdef,
-    unicode,
-    ActualText={\PDFNewline I earned a #1 after attending #2 #3. #4 \PDFNewline}
-  }
-  #1 (#2; #3) #4
-  \EndAccSupp{}
+  \AccessibleString{#1 (#2; #3) #4}{I earned a #1 attending #2 #3. #4}
 }
 
 \newcommand{\MyDegreeDetail}[2]{%
