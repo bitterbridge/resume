@@ -1,6 +1,7 @@
 % Packages.
 \usepackage{accsupp}
 \usepackage{array}
+\usepackage[usenames,dvipsnames]{color}
 \usepackage{enumitem}
 \usepackage{ifthen}
 \usepackage{fontawesome5}
@@ -19,6 +20,19 @@
 % Define new column types.
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+
+% Define colors
+\definecolor{MyGray}{gray}{.85}
+\definecolor{MyGrayLink}{gray}{.40}
+
+% Hyperref setup
+\hypersetup{
+  colorlinks,%
+  citecolor=black,%
+  filecolor=black,%
+  linkcolor=black,%
+  urlcolor=MyGrayLink,%
+}
 
 % A variadic command to define a command with a variable number of arguments.
 \newcommand{\Variadic}[6]{%
