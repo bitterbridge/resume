@@ -6,12 +6,11 @@ Website: https://darkdell.net/
 LinkedIn: https://www.linkedin.com/in/nug-doug/ 
 GitHub: https://github.com/ndouglas/
 Experience
-• Agile Six Applications, Inc.
-October 2020 – Present
-Senior DevOps Engineer (VA.gov Check-In Experience Team) February 2024 – Present
+• Agile Six Applications, Inc. October 2020 – Present
+Senior DevOps Engineer (VA.gov Check-In Experience Team; February 2024 – Present)
 ∗ Haven’t blown anything up yet
-∗ Served on a policy team to improve hiring practices for DevOps engineers
-Technical Lead (VA.gov Platform CMS Team) July 2023 – February 2024
+∗ Served on a task force to improve hiring practices for DevOps engineers
+Technical Lead (VA.gov Platform CMS Team; July 2023 – February 2024)
 ∗ Directed ongoing enhancement and deployment of Drupal CMS and associated infrastructure for VA.gov
 ∗ Fostered transparency and alignment by communicating project progress, updates, and any issues or blockers
 ∗ Maintained clear and open lines of communication, enabling stakeholders to make informed decisions and ensuring project success
@@ -21,7 +20,7 @@ Technical Lead (VA.gov Platform CMS Team) July 2023 – February 2024
 ∗ Led team in overcoming complex technical challenges, removing impediments, and ensuring smooth project execution
 ∗ Hired multiple Senior Software Engineers and a Software Quality Architect; drafted job descriptions, conducted technical interviews,
 and made final hiring recommendations
-Senior DevOps Engineer (VA.gov Platform CMS Team) October 2020 – February 2024
+Senior DevOps Engineer (VA.gov Platform CMS Team; October 2020 – February 2024)
 ∗ Improved QA architecture, improving overall product quality and customer satisfaction
 ∗ Mentored engineers on test design and system architecture
 ∗ Crafted and documented procedures, including timelines and sample communications, for consistent management of out-of-band
@@ -29,9 +28,8 @@ deploys
 ∗ Revamped internal content release management system, significantly reducing change failure rate
 ∗ Streamlined test pipeline, reducing test time and product delivery lead time
 ∗ Developed and maintained custom modules for Drupal 8/9/10 CMS
-• Aviation International News
-January 2015 – October 2020
-Senior Software/DevOps Engineer (ainonline.com) January 2015 – October 2020
+• Aviation International News January 2015 – October 2020
+Senior Software/DevOps Engineer (ainonline.com; January 2015 – October 2020)
 ∗ Architected and executed an innovative DevOps and backend development strategy, supporting the launch of two successful media
 products
 ∗ Implemented local development environments, CI/CD pipelines, and QA best practices
@@ -44,9 +42,8 @@ decision-making
 ∗ Architected CI pipeline, encompassing unit tests, static analysis, and code style tests
 ∗ Migrated systems from Acquia hosting to sustainable, self-servicing AWS, cutting infrastructure expenses by over two-thirds and
 reducing annual hosting costs by 40%
-• DEVONtechnologies
-January 2011 – December 2015
-Software Engineer (DEVONthink Sync) January 2011 – December 2015
+• DEVONtechnologies January 2011 – December 2015
+Software Engineer (DEVONthink Sync; January 2011 – December 2015)
 ∗ Developed, launched, and maintained proprietary sync technologies for flagship macOS/iOS desktop document database app
 ∗ Collaborated and communicated within a globally dispersed engineering department across six countries and four continents
 ∗ Led the adoption of Agile project management, Lean principles, and DevOps methodologies
@@ -55,14 +52,10 @@ Software Engineer (DEVONthink Sync) January 2011 – December 2015
 rate
 ∗ Automated aspects of certificate and configuration management, saving several person-days annually
 Education
-University of Nevada at Las Vegas (Las Vegas, NV)
 
-I earned a Bachelor's in Computer Science after attending May 2009 – December 2011. 
-- Graduated with a 3.5 GPA 
-- Took graduate-level coursework in Artificial Intelligence 
-- Completed an independent study in Virtual Machine design and implementation, and gave a guest lecture on the topic  
+I earned a Bachelor's in Computer Science after attending University of Nevada at Las Vegas May 2009 – December 2011. 
 
-Skills
+Skills
 Languages: 
 9 years of experience in PHP 
 PHP projects: 
@@ -70,11 +63,11 @@ PHP projects:
 - AINonline (https://www.ainonline.com/) (2016-2020): I developed and maintained the backend for an aviation news website, including custom code for a Drupal 7 CMS, ad sales, a custom newsletter generator, and subscription management. 
 - BJTonline (https://www.bjtonline.com/) (2016-2020): I developed and maintained the backend for a business aviation news website, including custom code for a Drupal 7 CMS, ad sales, and subscription management. 
 - FutureFlight (https://www.futureflight.aero/) (2019-2020): I developed and maintained the backend for an aviation news website, including custom code for a Drupal 8 CMS, a custom newsletter generator, and subscription management.  
- 
+, 
 4 years of experience in Objective-C 
 Objective-C projects: 
 - DEVONthink Pro Sync (https://devontechnologies.com/) (2012-2015): I developed and maintained the sync engine for a macOS/iOS desktop document database app.  
- 
+, 
 1 years of experience in LaTeX 
 LaTeX projects: 
 - Resume (https://github.com/ndouglas/resume) (2024-): I rewrote my resume in LaTeX to improve its maintainability and my ability to fine-tune it for individual job descriptions.  

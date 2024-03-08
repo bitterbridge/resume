@@ -20,113 +20,107 @@
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
 
-% Define the boolean variable outside of the environment to ensure it's recognized.
-\newboolean{firstitem}
+% A variadic command to define a command with a variable number of arguments.
+\newcommand{\Variadic}[6]{%
+  \expandafter\newcommand\csname Gobble#1Arg\endcsname[2]{%
+    \csname Check#1Arg\endcsname{##1#4##2}%
+  }%
+  \expandafter\newcommand\csname Check#1Arg\endcsname[1]{%
+    \csname @ifnextchar\endcsname\bgroup{\csname Gobble#1Arg\endcsname{##1}}{#2{##1#5}#6}%
+  }%
+  \expandafter\newcommand\csname #1\endcsname[1]{%
+    \csname Check#1Arg\endcsname{#3##1}%
+  }%
+}
 
 % Define a new list type for a comma-separated list.
-\newenvironment{runlist}
+\newboolean{CSLFirstItem}
+\newenvironment{CommaSeparatedList}
 {% Initialization
-  \setboolean{firstitem}{true}% Flag to track the first item
+  \setboolean{CSLFirstItem}{true}% Flag to track the first item
   \renewcommand\item{%
-              \ifthenelse{\boolean{firstitem}}%
-              {\setboolean{firstitem}{false}}% First item, do not print comma, switch flag off
+              \ifthenelse{\boolean{CSLFirstItem}}%
+              {\setboolean{CSLFirstItem}{false}}% First item, do not print comma, switch flag off
               {\unskip, }% Not the first item, print comma
         }%
-}
-{}
+}{}
 
 % A PDF command to insert a newline.
-\newcommand{\pdfnewline}{^^J}
+\newcommand{\PDFNewline}{^^J}
 
 % Define a command for a contact info item.
-\newcommand{\contactinfoitem}[3]{#1\hspace{0.5em}\href{#2}{#3}}
+\newcommand{\ContactInfoItem}[3]{#1\hspace{0.5em}\href{#2}{#3}}
 
 % Define a command to separate contact items.
-\newcommand{\contactinfoitemseparator}{\hspace{1em}}
+\newcommand{\ContactInfoItemseparator}{\hspace{1em}}
 
-% My name.
-\newcommand{\myfullname}{Nathan Douglas}
-
-% My phone number.
-\newcommand{\myphone}{(330) 998-8049}
-\newcommand{\myphoneplain}{+13309988049}
-
-% My website URL.
-\newcommand{\mywebsite}{darkdell.net}
-
-% My LinkedIn URL.
-\newcommand{\mylinkedinusername}{nug-doug}
-
-% My GitHub URL.
-\newcommand{\mygithubusername}{ndouglas}
-
-% My email address contact item.
-\newcommand{\myemailcontact}{%
+% My email address contact info item.
+\newcommand{\MyEmailContactInfoItem}{%
   \BeginAccSupp{
     method=pdfstringdef,
     space=true,
-    ActualText={\pdfnewline Email: \myemail}
-  }\normalfont \contactinfoitem{\faAt}{mailto:\myemail}{\myemail}
+    ActualText={\PDFNewline Email: \MyEmail}
+  }\normalfont \ContactInfoItem{\faAt}{mailto:\MyEmail}{\MyEmail}
   \EndAccSupp{}
 }
 
-% Phone number contact item.
-\newcommand{\myphonecontact}{%
+% Phone number contact info item.
+\newcommand{\MyPhoneContactInfoItem}{%
   \BeginAccSupp{
     method=pdfstringdef,
-    ActualText={\pdfnewline Phone: \myphone}
-  }\normalfont \contactinfoitem{\faPhone}{tel:\myphoneplain}{\myphone}
+    ActualText={\PDFNewline Phone: \MyPhoneNumber}
+  }\normalfont \ContactInfoItem{\faPhone}{tel:\MyPhoneNumberPlain}{\MyPhoneNumber}
   \EndAccSupp{}
 }
 
-% Website contact item.
-\newcommand{\mywebsiteurl}{https://\mywebsite/}
-\newcommand{\mywebsitecontact}{%
+% Website contact info item.
+\newcommand{\MyWebsiteUrl}{https://\MyWebsite/}
+\newcommand{\MyWebsiteContactInfoItem}{%
   \BeginAccSupp{
     method=pdfstringdef,
-    ActualText={\pdfnewline Website: \mywebsiteurl}
-  }\normalfont \contactinfoitem{\faGlobe}{\mywebsiteurl}{\mywebsite}
+    ActualText={\PDFNewline Website: \MyWebsiteUrl}
+  }\normalfont \ContactInfoItem{\faGlobe}{\MyWebsiteUrl}{\MyWebsite}
   \EndAccSupp{}
 }
 
 % LinkedIn supplemental commands.
-\newcommand{\mylinkedinurl}{https://www.linkedin.com/in/\mylinkedinusername/}
-\newcommand{\mylinkedincontact}{%
+\newcommand{\MyLinkedInUrl}{https://www.linkedin.com/in/\MyLinkedInUsername/}
+\newcommand{\MyLinkedInContactInfoItem}{%
   \BeginAccSupp{
     method=pdfstringdef,
-    ActualText={\pdfnewline LinkedIn: \mylinkedinurl}
-  }\normalfont \contactinfoitem{\faLinkedin}{\mylinkedinurl}{\mylinkedinusername}
+    ActualText={\PDFNewline LinkedIn: \MyLinkedInUrl}
+  }\normalfont \ContactInfoItem{\faLinkedin}{\MyLinkedInUrl}{\MyLinkedInUsername}
   \EndAccSupp{}
 }
 
 % GitHub supplemental commands.
-\newcommand{\mygithuburl}{https://github.com/\mygithubusername/}
-\newcommand{\mygithubcontact}{%
+\newcommand{\MyGitHubUrl}{https://github.com/\MyGitHubUsername/}
+\newcommand{\MyGitHubContactInfoItem}{%
   \BeginAccSupp{
     method=pdfstringdef,
-    ActualText={\pdfnewline GitHub: \mygithuburl}
-  }\normalfont \contactinfoitem{\faGithub}{\mygithuburl}{\mygithubusername}
+    ActualText={\PDFNewline GitHub: \MyGitHubUrl}
+  }\normalfont \ContactInfoItem{\faGithub}{\MyGitHubUrl}{\MyGitHubUsername}
   \EndAccSupp{}
 }
 
 % My name, linked to my website.
-\newcommand{\myheadername}{%
-  \Huge\bfseries\myfullname
+\newcommand{\MyHeaderName}{%
+  \Huge\bfseries\MyFullName
 }
 
 % My contact information is a list of contact items, separated by bullet points
 % when they occur in the same line, and separated by newlines when they occur
 % on different lines.
-\newcommand{\mycontactinfo}{%
+\newcommand{\MyContactInfo}{%
   \raggedleft \small
-  \myemailcontact \contactinfoitemseparator \myphonecontact \\
-  \mywebsitecontact \contactinfoitemseparator \mylinkedincontact \contactinfoitemseparator \mygithubcontact %
+  \MyEmailContactInfoItem \ContactInfoItemseparator \MyPhoneContactInfoItem \\
+  \MyWebsiteContactInfoItem \ContactInfoItemseparator \MyLinkedInContactInfoItem \ContactInfoItemseparator \MyGitHubContactInfoItem %
 }
 
 % Define my header.
-\newcommand{\myheader}{%
+\newcommand{\MyHeader}{%
   \noindent\begin{tabularx}{\textwidth}{@{}L R@{}}
-    \myheadername & \vspace{-1.75em}\mycontactinfo \\
+    \MyHeaderName & \vspace{-1.75em}\MyContactInfo \\
   \end{tabularx}\vspace{-0.1in}\hrule
 }
 
@@ -176,7 +170,7 @@
 }
 
 % Define my experience
-\newcommand{\myexperience}{%
+\newcommand{\MyExperience}{%
   % Begin experience list
   \resumeemployers{%
     % Begin Agile Six
@@ -268,18 +262,18 @@
   \BeginAccSupp{
     method=pdfstringdef,
     unicode,
-    ActualText={\pdfnewline I earned a #1 after attending #2 #3. \pdfnewline}
+    ActualText={\PDFNewline I earned a #1 after attending #2 #3. \PDFNewline}
   }
   #1 (#2; #3)
   \EndAccSupp{}
 }
 
 % Define my education
-\newcommand{\myeducation}{%
+\newcommand{\MyEducation}{%
   \resumestudy{Bachelor's in Computer Science}{University of Nevada at Las Vegas}{May 2009 -- December 2011}{%
-    \pdfnewline - Graduated with a 3.5 GPA
-    \pdfnewline - Took graduate-level coursework in Artificial Intelligence
-    \pdfnewline - Completed an independent study in Virtual Machine design and implementation, and gave a guest lecture on the topic
+    \PDFNewline - Graduated with a 3.5 GPA
+    \PDFNewline - Took graduate-level coursework in Artificial Intelligence
+    \PDFNewline - Completed an independent study in Virtual Machine design and implementation, and gave a guest lecture on the topic
   }
 }
 
@@ -293,7 +287,7 @@
 
 % Define a skill area and its skills.
 \newcommand{\resumeskillarea}[2]{%
-  \item \small\textbf{#1}: \begin{runlist}#2\end{runlist}
+  \item \small\textbf{#1}: \begin{CommaSeparatedList}#2\end{CommaSeparatedList}
 }
 
 % Define a resume skill language.
@@ -302,7 +296,7 @@
   \item\BeginAccSupp{
     method=pdfstringdef,
     unicode,
-    ActualText={\pdfnewline #3 years of experience in #2 \pdfnewline #2 projects: #4 \pdfnewline}
+    ActualText={\PDFNewline #3 years of experience in #2 \PDFNewline #2 projects: #4 \PDFNewline}
   }\normalfont{#1}%
   \EndAccSupp{}%
 }
@@ -313,7 +307,7 @@
   \BeginAccSupp{
     method=pdfstringdef,
     unicode,
-    ActualText={\pdfnewline}
+    ActualText={\PDFNewline}
   }%
   #1%
   \EndAccSupp{}%
@@ -324,29 +318,29 @@
   \BeginAccSupp{
     method=pdfstringdef,
     unicode,
-    ActualText={\pdfnewline - #1 (see #2): #3}
+    ActualText={\PDFNewline - #1 (see #2): #3}
   }
   \item\href{#2}{#1}: #3
   \EndAccSupp{}
 }
 
 % Define my skills
-\newcommand{\myskills}{%
+\newcommand{\MySkills}{%
   % Begin skill areas list
   \resumeskillareas{%
     \resumeskillarea{Languages}{%
       % Python, JavaScript, PHP, Ruby, Java, C\#, C++, C, Swift, Objective-C, Bash, SQL, HTML, CSS, XML, JSON, YAML,
       \resumeskilllanguage{PHP}{PHP}{9}{%
-        \pdfnewline - VA.gov CMS (https://www.va.gov/) (2020-2024): I developed and maintained the backend for a major government website, including custom code for a Drupal 8/9/10 CMS.
-        \pdfnewline - AINonline (https://www.ainonline.com/) (2016-2020): I developed and maintained the backend for an aviation news website, including custom code for a Drupal 7 CMS, ad sales, a custom newsletter generator, and subscription management.
-        \pdfnewline - BJTonline (https://www.bjtonline.com/) (2016-2020): I developed and maintained the backend for a business aviation news website, including custom code for a Drupal 7 CMS, ad sales, and subscription management.
-        \pdfnewline - FutureFlight (https://www.futureflight.aero/) (2019-2020): I developed and maintained the backend for an aviation news website, including custom code for a Drupal 8 CMS, a custom newsletter generator, and subscription management.
+        \PDFNewline - VA.gov CMS (https://www.va.gov/) (2020-2024): I developed and maintained the backend for a major government website, including custom code for a Drupal 8/9/10 CMS.
+        \PDFNewline - AINonline (https://www.ainonline.com/) (2016-2020): I developed and maintained the backend for an aviation news website, including custom code for a Drupal 7 CMS, ad sales, a custom newsletter generator, and subscription management.
+        \PDFNewline - BJTonline (https://www.bjtonline.com/) (2016-2020): I developed and maintained the backend for a business aviation news website, including custom code for a Drupal 7 CMS, ad sales, and subscription management.
+        \PDFNewline - FutureFlight (https://www.futureflight.aero/) (2019-2020): I developed and maintained the backend for an aviation news website, including custom code for a Drupal 8 CMS, a custom newsletter generator, and subscription management.
       }
       \resumeskilllanguage{Objective-C}{Objective-C}{4}{%
-        \pdfnewline - DEVONthink Pro Sync (https://devontechnologies.com/) (2012-2015): I developed and maintained the sync engine for a macOS/iOS desktop document database app.
+        \PDFNewline - DEVONthink Pro Sync (https://devontechnologies.com/) (2012-2015): I developed and maintained the sync engine for a macOS/iOS desktop document database app.
       }
       \resumeskilllanguage{\LaTeX{}}{LaTeX}{1}{%
-        \pdfnewline - Resume (https://github.com/ndouglas/resume) (2024-): I rewrote my resume in LaTeX to improve its maintainability and my ability to fine-tune it for individual job descriptions.
+        \PDFNewline - Resume (https://github.com/ndouglas/resume) (2024-): I rewrote my resume in LaTeX to improve its maintainability and my ability to fine-tune it for individual job descriptions.
       }
     }
     \resumeskillarea{Infrastructure-as-Code}{%
