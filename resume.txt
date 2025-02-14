@@ -1,5 +1,5 @@
 Nathan Douglas 
-Email: brisk.bell8333@tenesm.us 
+Email: herodevs@tenesm.us 
 Phone: (330) 998-8049
 
 Website: https://darkdell.net/ 
@@ -7,56 +7,58 @@ LinkedIn: https://www.linkedin.com/in/nug-doug/
 GitHub: https://github.com/ndouglas/
 Experience
 • Agile Six Applications, Inc. October 2020 – Present
-Senior DevOps Engineer (VA.gov Check-In Experience Team; February 2024 – Present)
-∗ Haven’t blown anything up yet
+Senior DevOps/Platform Engineer (VA.gov Check-In Experience; February 2024 – Present)
+∗ Migrated infrastructure for products between AWS accounts
+∗ Migrated Infrastructure-as-Code from CloudFormation to Terraform
+∗ Introduced Terraform tests for automated testing of reusable Terraform modules
+∗ Introduced system tests spanning multiple products and their upstream integrations
+∗ Migrated from using IAM service accounts to OIDC role assumption
+∗ Managed compliance and collaboration in ATO (Authority to Operate) and PRB (Product Review Board) processes
 ∗ Served on a task force to improve hiring practices for DevOps engineers
-Technical Lead (VA.gov Platform CMS Team; July 2023 – February 2024)
+Technical Lead (VA.gov CMS; July 2023 – February 2024)
 ∗ Directed ongoing enhancement and deployment of Drupal CMS and associated infrastructure for VA.gov
-∗ Fostered transparency and alignment by communicating project progress, updates, and any issues or blockers
-∗ Maintained clear and open lines of communication, enabling stakeholders to make informed decisions and ensuring project success
+∗ Communicated project progress, updates, and any issues or blockers with stakeholders and other teams
 ∗ Anticipated potential development challenges, identified project delays, and swiftly addressed issues
 ∗ Mentored engineers to improve proficiency and expertise in best practices
-∗ Orchestrated team of 7-9 engineers in PagerDuty rotation, improving reliability and reducing incident response time
-∗ Led team in overcoming complex technical challenges, removing impediments, and ensuring smooth project execution
-∗ Hired multiple Senior Software Engineers and a Software Quality Architect; drafted job descriptions, conducted technical interviews,
-and made final hiring recommendations
-Senior DevOps Engineer (VA.gov Platform CMS Team; October 2020 – February 2024)
+∗ Orchestrated engineering team in PagerDuty rotation
+∗ Hired multiple Senior Software Engineers and a Software Quality Architect
+Senior DevOps Engineer (VA.gov CMS; October 2020 – February 2024)
 ∗ Improved QA architecture, improving overall product quality and customer satisfaction
 ∗ Mentored engineers on test design and system architecture
-∗ Crafted and documented procedures, including timelines and sample communications, for consistent management of out-of-band
-deploys
+∗ Crafted and documented procedures for disaster recovery, out-of-band deploys, etc
 ∗ Revamped internal content release management system, significantly reducing change failure rate
 ∗ Streamlined test pipeline, reducing test time and product delivery lead time
-∗ Developed and maintained custom modules for Drupal 8/9/10 CMS
+∗ Developed, maintained, and custom modules for Drupal 8/9/10 CMS
 • Aviation International News January 2015 – October 2020
 Senior Software/DevOps Engineer (ainonline.com; January 2015 – October 2020)
-∗ Architected and executed an innovative DevOps and backend development strategy, supporting the launch of two successful media
-products
+∗ Architected infrastructure for two successful media products
 ∗ Implemented local development environments, CI/CD pipelines, and QA best practices
 ∗ Guided and mentored junior engineers, emphasizing soft skills and engineering best practices
 ∗ Instituted CD pipeline, including functional tests and staging deployment
-∗ Created a Vagrant-based solution for local development, increasing team productivity and streamlining development and testing of
-new features
-∗ Developed an app to centralize ad sales, subscriptions, and circulation data, reducing manual data entry and empowering data-driven
-decision-making
+∗ Created a Vagrant-based solution for local development
+∗ Developed an app to centralize ad sales, subscriptions, and circulation data
 ∗ Architected CI pipeline, encompassing unit tests, static analysis, and code style tests
-∗ Migrated systems from Acquia hosting to sustainable, self-servicing AWS, cutting infrastructure expenses by over two-thirds and
-reducing annual hosting costs by 40%
+∗ Migrated systems from Acquia hosting to AWS IaC, reducing IT operating costs by 70%
 • DEVONtechnologies January 2011 – December 2015
 Software Engineer (DEVONthink Sync; January 2011 – December 2015)
-∗ Developed, launched, and maintained proprietary sync technologies for flagship macOS/iOS desktop document database app
-∗ Collaborated and communicated within a globally dispersed engineering department across six countries and four continents
+∗ Developed, launched, and maintained sync technologies for flagship apps
+∗ Collaborated effectively within teams dispersed across six countries and four continents
 ∗ Led the adoption of Agile project management, Lean principles, and DevOps methodologies
-∗ Introduced CI/CD pipelines, resulting in a significant decrease in delivery lead time and eradicating delivery and packaging errors
-∗ Introduced automated testing, leading to a large reduction in manual testing hours, elevating test coverage, and cutting change failure
-rate
-∗ Automated aspects of certificate and configuration management, saving several person-days annually
+∗ Introduced Continuous Delivery pipeline, decreasing delivery lead time and delivery failures
+∗ Introduced Continuous Integration pipeline, sharply reducing failure rate and manual testing toil
+∗ Automated aspects of certificate and configuration management
 Education
 Graduated with a 3.5 GPA
 Took graduate-level coursework in Artificial Intelligence and Machine Learning
 Completed an independent study in Virtual Machine design and implementation in C++, and gave a guest lecture on the topic
-Skills
+Skills
 Languages: 
+10 years of experience in Node.js 
+Node.js projects: 
+- CHIP (https://github.com/department-of-veterans-affairs/chip/) (2024-2025): CHIP (Check-In Integration Point) is an API allowing veterans to check in to VA appointments via SMS, mobile apps, and websites. 
+- LoROTA (https://github.com/department-of-veterans-affairs/lorota/) (2024-2025): LoROTA (Low-Risk One Time Authentication) is a high-performance secure cache for safely managing veteran PHI/PII. 
+- System Tests (https://github.com/department-of-veterans-affairs/cie-system-tests/) (2024-2025): System Tests are integration tests that exercise the entire product as delivered, including all upstream services.  
+, 
 9 years of experience in PHP 
 PHP projects: 
 - VA.gov CMS (https://www.va.gov/) (2020-2024): I developed and maintained the backend for a major government website, including custom code for a Drupal 8/9/10 CMS. 
@@ -64,19 +66,34 @@ PHP projects:
 - BJTonline (https://www.bjtonline.com/) (2016-2020): I developed and maintained the backend for a business aviation news website, including custom code for a Drupal 7 CMS, ad sales, and subscription management. 
 - FutureFlight (https://www.futureflight.aero/) (2019-2020): I developed and maintained the backend for an aviation news website, including custom code for a Drupal 8 CMS, a custom newsletter generator, and subscription management.  
 , 
+20 years of experience in Bash 
+Bash projects:  
+, 
+4 years of experience in Rust 
+Rust projects: 
+- Blackpool (https://github.com/ndouglas/blackpool/) (2023-2024): I developed a programming language, virtual machine, and domain-specific library based on the Lox language. 
+- Sunhouse (https://github.com/ndouglas/sunhouse/) (2022-2023): I developed a simple ray tracing renderer. 
+- Darkdell (https://github.com/ndouglas/darkdell/) (2024): I developed a simple (very basic) static site generator. 
+- Greenstone (https://github.com/ndouglas/greenstone/) (2024): I developed a cycle-accurate NES (Nintendo Entertainment System) emulator.  
+, 
+2 years of experience in Python 
+Python projects:  
+, 
 4 years of experience in Objective-C 
 Objective-C projects: 
 - DEVONthink Pro Sync (https://devontechnologies.com/) (2012-2015): I developed and maintained the sync engine for a macOS/iOS desktop document database app.  
+, 
+4 years of experience in C 
+C projects:  
 , 
 1 years of experience in LaTeX 
 LaTeX projects: 
 - Resume (https://github.com/ndouglas/resume) (2024-): I rewrote my resume in LaTeX to improve its maintainability and my ability to fine-tune it for individual job descriptions.  
 
-Infrastructure-as-Code: Terraform, CloudFormation, Ansible, Puppet, Chef, SaltStack
-CI/CD: Jenkins, GitHub Actions, CircleCI, Travis CI, GitLab CI, Bitbucket Pipelines
-Containerization: Docker, Kubernetes, Nomad, Amazon ECS, Amazon EKS
-Cloud Platforms: Amazon Web Services, Google Cloud Platform, Microsoft Azure, IBM Cloud, Oracle Cloud
-Monitoring: Prometheus, Grafana, Datadog, New Relic, Amazon CloudWatch
-Logging: Elasticsearch, Logstash, Kibana, Splunk, Sumo Logic
-Networking: TCP/IP, DNS, HTTP, HTTPS, VPN, VPC, Route 53, CloudFront, ELB, ALB, NLB
+Infrastructure-as-Code: Terraform, Ansible, CloudFormation
+CI/CD: GitHub Actions, Jenkins
+Containerization: Docker, Kubernetes, AWS ECS
+Cloud Platforms: Amazon Web Services
+Logging/Monitoring: Datadog, CloudWatch
+Methodologies: DevOps, Agile, GitOps, DevSecOps, Scrum, Kanban
 

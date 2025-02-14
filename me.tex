@@ -172,37 +172,40 @@
     {% Begin roles at Agile Six
       \MyRoles{% List of roles at Agile Six
 
-        % CIE DevOps Engineer Role
-        \MyRole{Senior DevOps Engineer}{VA.gov Check-In Experience Team}{February 2024 -- Present}{%
+        % CIE DevOps/Platform Engineer Role
+        \MyRole{Senior DevOps/Platform Engineer}{VA.gov Check-In Experience}{February 2024 -- Present}{%
           \MyRoleItems{%
-            \MyRoleItem{Haven't blown anything up yet}
+            \MyRoleItem{Migrated infrastructure for products between AWS accounts}
+            \MyRoleItem{Migrated Infrastructure-as-Code from CloudFormation to Terraform}
+            \MyRoleItem{Introduced Terraform tests for automated testing of reusable Terraform modules}
+            \MyRoleItem{Introduced system tests spanning multiple products and their upstream integrations}
+            \MyRoleItem{Migrated from using IAM service accounts to OIDC role assumption}
+            \MyRoleItem{Managed compliance and collaboration in ATO (Authority to Operate) and PRB (Product Review Board) processes}
             \MyRoleItem{Served on a task force to improve hiring practices for DevOps engineers}
           } % End CIE DevOps Engineer role items.
         } % End CIE DevOps Engineer Role
 
         % CMS Tech Lead Role
-        \MyRole{Technical Lead}{VA.gov Platform CMS Team}{July 2023 -- February 2024}{%
+        \MyRole{Technical Lead}{VA.gov CMS}{July 2023 -- February 2024}{%
           \MyRoleItems{%
             \MyRoleItem{Directed ongoing enhancement and deployment of Drupal CMS and associated infrastructure for VA.gov}
-            \MyRoleItem{Fostered transparency and alignment by communicating project progress, updates, and any issues or blockers}
-            \MyRoleItem{Maintained clear and open lines of communication, enabling stakeholders to make informed decisions and ensuring project success}
+            \MyRoleItem{Communicated project progress, updates, and any issues or blockers with stakeholders and other teams}
             \MyRoleItem{Anticipated potential development challenges, identified project delays, and swiftly addressed issues}
             \MyRoleItem{Mentored engineers to improve proficiency and expertise in best practices}
-            \MyRoleItem{Orchestrated team of 7-9 engineers in PagerDuty rotation, improving reliability and reducing incident response time}
-            \MyRoleItem{Led team in overcoming complex technical challenges, removing impediments, and ensuring smooth project execution}
-            \MyRoleItem{Hired multiple Senior Software Engineers and a Software Quality Architect; drafted job descriptions, conducted technical interviews, and made final hiring recommendations}
+            \MyRoleItem{Orchestrated engineering team in PagerDuty rotation}
+            \MyRoleItem{Hired multiple Senior Software Engineers and a Software Quality Architect}
           }
         }% End CMS Tech Lead Role
 
         % CMS DevOps Engineer Role
-        \MyRole{Senior DevOps Engineer}{VA.gov Platform CMS Team}{October 2020 -- February 2024}{%
+        \MyRole{Senior DevOps Engineer}{VA.gov CMS}{October 2020 -- February 2024}{%
           \MyRoleItems{%
             \MyRoleItem{Improved QA architecture, improving overall product quality and customer satisfaction}
             \MyRoleItem{Mentored engineers on test design and system architecture}
-            \MyRoleItem{Crafted and documented procedures, including timelines and sample communications, for consistent management of out-of-band deploys}
+            \MyRoleItem{Crafted and documented procedures for disaster recovery, out-of-band deploys, etc}
             \MyRoleItem{Revamped internal content release management system, significantly reducing change failure rate}
             \MyRoleItem{Streamlined test pipeline, reducing test time and product delivery lead time}
-            \MyRoleItem{Developed and maintained custom modules for Drupal 8/9/10 CMS}
+            \MyRoleItem{Developed, maintained, and  custom modules for Drupal 8/9/10 CMS}
           }
         }% End CMS DevOps Engineer Role
       } % End roles at Agile Six
@@ -216,14 +219,14 @@
         % Senior Software/DevOps Engineer Role
         \MyRole{Senior Software/DevOps Engineer}{ainonline.com}{January 2015 -- October 2020}{%
           \MyRoleItems{%
-            \MyRoleItem{Architected and executed an innovative DevOps and backend development strategy, supporting the launch of two successful media products}
+            \MyRoleItem{Architected infrastructure for two successful media products}
             \MyRoleItem{Implemented local development environments, CI/CD pipelines, and QA best practices}
             \MyRoleItem{Guided and mentored junior engineers, emphasizing soft skills and engineering best practices}
             \MyRoleItem{Instituted CD pipeline, including functional tests and staging deployment}
-            \MyRoleItem{Created a Vagrant-based solution for local development, increasing team productivity and streamlining development and testing of new features}
-            \MyRoleItem{Developed an app to centralize ad sales, subscriptions, and circulation data, reducing manual data entry and empowering data-driven decision-making}
+            \MyRoleItem{Created a Vagrant-based solution for local development}
+            \MyRoleItem{Developed an app to centralize ad sales, subscriptions, and circulation data}
             \MyRoleItem{Architected CI pipeline, encompassing unit tests, static analysis, and code style tests}
-            \MyRoleItem{Migrated systems from Acquia hosting to sustainable, self-servicing AWS, cutting infrastructure expenses by over two-thirds and reducing annual hosting costs by 40\%}
+            \MyRoleItem{Migrated systems from Acquia hosting to AWS IaC, reducing IT operating costs by ~70\%}
           }
         }% End Senior Software/DevOps Engineer Role
       } % End roles at Aviation International News
@@ -237,12 +240,12 @@
         % Software Engineer Role
         \MyRole{Software Engineer}{DEVONthink Sync}{January 2011 -- December 2015}{%
           \MyRoleItems{%
-            \MyRoleItem{Developed, launched, and maintained proprietary sync technologies for flagship macOS/iOS desktop document database app}
-            \MyRoleItem{Collaborated and communicated within a globally dispersed engineering department across six countries and four continents}
+            \MyRoleItem{Developed, launched, and maintained sync technologies for flagship apps}
+            \MyRoleItem{Collaborated effectively within teams dispersed across six countries and four continents}
             \MyRoleItem{Led the adoption of Agile project management, Lean principles, and DevOps methodologies}
-            \MyRoleItem{Introduced CI/CD pipelines, resulting in a significant decrease in delivery lead time and eradicating delivery and packaging errors}
-            \MyRoleItem{Introduced automated testing, leading to a large reduction in manual testing hours, elevating test coverage, and cutting change failure rate}
-            \MyRoleItem{Automated aspects of certificate and configuration management, saving several person-days annually}
+            \MyRoleItem{Introduced Continuous Delivery pipeline, decreasing delivery lead time and delivery failures}
+            \MyRoleItem{Introduced Continuous Integration pipeline, sharply reducing failure rate and manual testing toil}
+            \MyRoleItem{Automated aspects of certificate and configuration management}
           }
         }% End Software Engineer Role
       } % End roles at DEVONtechnologies
@@ -272,7 +275,7 @@
     }{%
       \MyDegreeDetail{Took graduate-level coursework in Artificial Intelligence and Machine Learning}{}
     }{%
-      \MyDegreeDetail{Completed an independent study in Virtual Machine design and implementation in \Cpp, and gave a guest lecture on the topic}{Completed an independent study in Virtual Machine design and implementation in C++, and gave a guest lecture on the topic}
+      \MyDegreeDetail{Completed an independent study in Virtual Machine design and implementation in C/\Cpp, and gave a guest lecture on the topic}{Completed an independent study in Virtual Machine design and implementation in C++, and gave a guest lecture on the topic}
     }% End degree details
   }% End Bachelor's in Computer Science
 }
@@ -335,7 +338,13 @@
   \MySkillAreas{%
     \MySkillArea{Languages}{%
       \MySkillItems{%
-        % Python, JavaScript, PHP, Ruby, Java, C\#, C++, C, Swift, Objective-C, Bash, SQL, HTML, CSS, XML, JSON, YAML,
+      % Python, JavaScript, PHP, Ruby, Java, C\#, C++, C, Swift, Objective-C, Bash, SQL, HTML, CSS, XML, JSON, YAML,
+      \MyLanguageSkill{Node.js}{Node.js}{10}{%
+          \PDFNewline - CHIP (https://github.com/department-of-veterans-affairs/chip/) (2024-2025): CHIP (Check-In Integration Point) is an API allowing veterans to check in to VA appointments via SMS, mobile apps, and websites.
+          \PDFNewline - LoROTA (https://github.com/department-of-veterans-affairs/lorota/) (2024-2025): LoROTA (Low-Risk One Time Authentication) is a high-performance secure cache for safely managing veteran PHI/PII.
+          \PDFNewline - System Tests (https://github.com/department-of-veterans-affairs/cie-system-tests/) (2024-2025): System Tests are integration tests that exercise the entire product as delivered, including all upstream services.
+        }%
+      }{
         \MyLanguageSkill{PHP}{PHP}{9}{%
           \PDFNewline - VA.gov CMS (https://www.va.gov/) (2020-2024): I developed and maintained the backend for a major government website, including custom code for a Drupal 8/9/10 CMS.
           \PDFNewline - AINonline (https://www.ainonline.com/) (2016-2020): I developed and maintained the backend for an aviation news website, including custom code for a Drupal 7 CMS, ad sales, a custom newsletter generator, and subscription management.
@@ -343,9 +352,25 @@
           \PDFNewline - FutureFlight (https://www.futureflight.aero/) (2019-2020): I developed and maintained the backend for an aviation news website, including custom code for a Drupal 8 CMS, a custom newsletter generator, and subscription management.
         }%
       }{
+        \MyLanguageSkill{Bash}{Bash}{20}{%
+        }%
+      }{
+        \MyLanguageSkill{Rust}{Rust}{4}{%
+          \PDFNewline - Blackpool (https://github.com/ndouglas/blackpool/) (2023-2024): I developed a programming language, virtual machine, and domain-specific library based on the Lox language.
+          \PDFNewline - Sunhouse (https://github.com/ndouglas/sunhouse/) (2022-2023): I developed a simple ray tracing renderer.
+          \PDFNewline - Darkdell (https://github.com/ndouglas/darkdell/) (2024): I developed a simple (very basic) static site generator.
+          \PDFNewline - Greenstone (https://github.com/ndouglas/greenstone/) (2024): I developed a cycle-accurate NES (Nintendo Entertainment System) emulator.
+        }%
+      }{
+        \MyLanguageSkill{Python}{Python}{2}{%
+        }%
+      }{
         \MyLanguageSkill{Objective-C}{Objective-C}{4}{%
           \PDFNewline - DEVONthink Pro Sync (https://devontechnologies.com/) (2012-2015): I developed and maintained the sync engine for a macOS/iOS desktop document database app.
         }%
+      }{
+          \MyLanguageSkill{C}{C}{4}{%
+          }%
       }{
         \MyLanguageSkill{\LaTeX{}}{LaTeX}{1}{%
           \PDFNewline - Resume (https://github.com/ndouglas/resume) (2024-): I rewrote my resume in LaTeX to improve its maintainability and my ability to fine-tune it for individual job descriptions.
@@ -353,25 +378,22 @@
       }
     }
     \MySkillArea{Infrastructure-as-Code}{%
-      \MySkillItems{Terraform}{CloudFormation}{Ansible}{Puppet}{Chef}{SaltStack}
+      \MySkillItems{Terraform}{Ansible}{CloudFormation}
     }
     \MySkillArea{CI/CD}{%
-      \MySkillItems{Jenkins}{GitHub Actions}{CircleCI}{Travis CI}{GitLab CI}{Bitbucket Pipelines}
+      \MySkillItems{GitHub Actions}{Jenkins}
     }
     \MySkillArea{Containerization}{%
-      \MySkillItems{Docker}{Kubernetes}{Nomad}{Amazon ECS}{Amazon EKS}
+      \MySkillItems{Docker}{Kubernetes}{AWS ECS}
     }
     \MySkillArea{Cloud Platforms}{%
-      \MySkillItems{Amazon Web Services}{Google Cloud Platform}{Microsoft Azure}{IBM Cloud}{Oracle Cloud}
+      \MySkillItems{Amazon Web Services}
     }
-    \MySkillArea{Monitoring}{%
-      \MySkillItems{Prometheus}{Grafana}{Datadog}{New Relic}{Amazon CloudWatch}
+    \MySkillArea{Logging/Monitoring}{%
+      \MySkillItems{Datadog}{CloudWatch}
     }
-    \MySkillArea{Logging}{%
-      \MySkillItems{Elasticsearch}{Logstash}{Kibana}{Splunk}{Sumo Logic}
-    }
-    \MySkillArea{Networking}{%
-      \MySkillItems{TCP/IP}{DNS}{HTTP}{HTTPS}{VPN}{VPC}{Route 53}{CloudFront}{ELB}{ALB}{NLB}
+    \MySkillArea{Methodologies}{%
+      \MySkillItems{DevOps}{Agile}{GitOps}{DevSecOps}{Scrum}{Kanban}
     }
   }
 }

@@ -8,8 +8,8 @@ temporary="$(getopt -o e:r: --long email:,role: -- "$@")";
 eval set -- "$temporary" || exit 1;
 
 # Set default values.
-my_email='brisk.bell8333@tenesm.us';
-my_title='Senior DevOps Engineer';
+my_email='herodevs@tenesm.us';
+my_title='Senior DevOps/Platform/Site Reliability Engineer';
 my_first_name='Nathan';
 my_last_name='Douglas';
 my_phone_number='(330) 998-8049';
