@@ -5,8 +5,9 @@ building CI/CD pipelines, and mentoring cross-functional teams to deliver reliab
 Experience
 Senior DevOps/Platform Engineer Oct. 2020 – Present
 Agile Six Applications, Inc San Diego, CA (Remote)
-• Migrated the Check-In Experience product to a new AWS account (see below)
-• Served as Tech Lead for the VA.gov Content Management System product (see below)
+(on contract to the U.S. Department of Veterans Affairs)
+• Migrated the VA.gov Check-In Experience product to a new AWS account
+• Served as Tech Lead for the VA.gov Content Management System product
 • Served on a task force to improve hiring practices for DevOps engineers
 • Hired multiple Senior Engineers and a Software Quality Architect
 • Contributed to contract proposals and case studies
@@ -14,8 +15,8 @@ Agile Six Applications, Inc San Diego, CA (Remote)
 • Developed and maintained CI/CD pipelines using Jenkins and GitHub Actions
 Senior Software/DevOps Engineer Jan. 2016 – Oct. 2020
 Convention News Company Midland Park, NJ (Remote)
-• Architected infrastructure and built the content and account management services for FutureFlight.aero (see below)
-• Constructed backend services for Business Jet Traveler (see below) and Aviation International News
+• Architected infrastructure and built the content and account management services for FutureFlight.aero
+• Constructed backend services for Business Jet Traveler and Aviation International News
 • Migrated all products from Acquia hosting to AWS, reducing yearly IT operating costs by 70%
 • Developed an app to centralize ad sales, subscriptions, and circulation data
 • Guided and mentored junior engineers, emphasizing soft skills and engineering best practices
