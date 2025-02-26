@@ -23,24 +23,12 @@
 \usepackage{fontawesome5}
 \usepackage{fontspec}
 
-\directlua{luaotfload.add_fallback
-  ("emojifallback",
-    {
-      "NotoColorEmoji:mode=harf;"
-    }
-  )}
-
 \setmainfont{texgyretermes-regular}[
   Extension      = .otf ,
   BoldFont       = texgyretermes-bold,
   ItalicFont     = texgyretermes-italic,
   BoldItalicFont = texgyretermes-bolditalic,
-  RawFeature={fallback=emojifallback}
 ]
-
-\def\pdfglyphtounicode#1#2{}
-
-\input{glyphtounicode}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -66,9 +54,6 @@
 \titleformat{\section}{
   \vspace{-4pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
-
-% Ensure that generate pdf is machine readable/ATS parsable
-% \pdfgentounicode=1
 
 %-------------------------
 % Custom commands
@@ -152,6 +137,8 @@
   \href{https://github.com/\MyGitHubUsername}{\faGithub\hspace{0.5em}\underline{github.com/\MyGitHubUsername}}
 \end{center}
 
+Senior DevOps Engineer with 10+ years’ experience leading cloud infrastructure migrations, optimizing CI/CD pipelines, and mentoring cross-functional teams to deliver reliable, scalable solutions.
+
 %-----------EXPERIENCE-----------
 \section{Experience}
   \resumeSubHeadingListStart
@@ -174,8 +161,8 @@
       \resumeItemListStart
         \resumeItem{Architected infrastructure and built the content and account management services for FutureFlight.aero}
         \resumeItem{Constructed backend services for Business Jet Traveler and Aviation International News}
-        \resumeItem{Developed an app to centralize ad sales, subscriptions, and circulation data}
         \resumeItem{Migrated systems from Acquia hosting to AWS IaC, reducing IT operating costs by ~70\%}
+        \resumeItem{Developed an app to centralize ad sales, subscriptions, and circulation data}
         \resumeItem{Guided and mentored junior engineers, emphasizing soft skills and engineering best practices}
         \resumeItem{Created a Vagrant-based solution for local development}
       \resumeItemListEnd
@@ -251,19 +238,6 @@
       \resumeListicleItem{Logging/Monitoring}{Datadog, AWS CloudWatch, PagerDuty, Sentry } \\
       \resumeListicleItem{Methodologies}{DevOps, Agile, GitOps, DevSecOps, Scrum, Kanban } \\
       \resumeListicleItem{Miscellaneous}{JSON:API, GOFAI, \LaTeX{} } \\
-    \resumeListicleEnd
-  \resumeSubHeadingListEnd
-
-%-----------SIDE PROJECTS-----------
-\section{Side Projects (Just for Fun!)}
-  \resumeSubHeadingListStart
-    \resumeListicleStart
-      \resumeSideProjectListicleItem{https://github.com/ndouglas/oldstones/}{🪨 Oldstones}{An implementation of Tim Boring's simple orchestrator}{Go} \\
-      \resumeSideProjectListicleItem{https://github.com/goldentooth/}{🦷 Goldentooth}{Raspberry Pi Kubernetes cluster projects}{Ansible, Terraform, Bash} \\
-      \resumeSideProjectListicleItem{https://github.com/ndouglas/blackpool/}{💻 Blackpool}{An implementation of the Lox programming language and virtual machine}{Rust} \\
-      \resumeSideProjectListicleItem{https://github.com/ndouglas/sunhouse/}{🌈 Sunhouse}{A simple ray-tracing renderer}{Rust} \\
-      \resumeSideProjectListicleItem{https://github.com/ndouglas/greenstone/}{🎮 Greenstone}{A cycle-accurate NES emulator that's somewhere in the PPU implementation}{Rust} \\
-      \resumeSideProjectListicleItem{https://github.com/ndouglas/clork/}{📜 CLORK}{A port of \emph{ZORK I} from the original microcomputer ZIL}{Clojure} \\
     \resumeListicleEnd
   \resumeSubHeadingListEnd
 

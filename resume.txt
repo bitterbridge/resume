@@ -1,10 +1,12 @@
 Nathan Douglas
 Phone (330) 998-8049 | @ brisk.bell8311@tenesm.us | LINKEDIN linkedin.com/in/nug-doug | Github github.com/ndouglas
+Senior DevOps Engineer with 10+ years’ experience leading cloud infrastructure migrations, optimizing CI/CD pipelines,
+and mentoring cross-functional teams to deliver reliable, scalable solutions.
 Experience
 Senior DevOps/Platform Engineer Oct. 2020 – Present
 Agile Six Applications, Inc San Diego, CA (Remote)
 • Migrated the Check-In Experience product to a new AWS account
-• Served as Technical Lead for the VA.gov Content Management System
+• Served as Tech Lead for the VA.gov Content Management System
 • Served on a task force to improve hiring practices for DevOps engineers
 • Hired multiple Senior Engineers and a Software Quality Architect
 • Contributed to contract proposals and case studies
@@ -13,8 +15,8 @@ Senior Software/DevOps Engineer Jan. 2016 – Oct. 2020
 Convention News Company Midland Park, NJ (Remote)
 • Architected infrastructure and built the content and account management services for FutureFlight.aero
 • Constructed backend services for Business Jet Traveler and Aviation International News
-• Developed an app to centralize ad sales, subscriptions, and circulation data
 • Migrated systems from Acquia hosting to AWS IaC, reducing IT operating costs by 70%
+• Developed an app to centralize ad sales, subscriptions, and circulation data
 • Guided and mentored junior engineers, emphasizing soft skills and engineering best practices
 • Created a Vagrant-based solution for local development
 Software Engineer Jan. 2012 – Dec. 2015
@@ -44,14 +46,14 @@ FutureFlight.aero | Drupal, PHP, Node.js, Ansible, CloudFormation Jan. 2019 – 
 • Architected server infrastructure for Drupal content management system
 • Wrote Lambda function code for subscriber account services
 • Designed and implemented infrastructure for subscriber account services
-• Designed and implemented data model for EVTOL aircraft directory
+• Designed and implemented data model for EVTOL aircraft directory
 • Implemented local development environments, CI/CD pipelines, and QA best practices
-Business Jet Traveler | Drupal, PHP, Node.js, Ansible, Terraform, GitHub Actions Jan. 2018 – Dec. 2018
+Business Jet Traveler | Drupal, PHP, CloudFormation Jan. 2018 – Dec. 2018
 • Designed and implemented data model for aircraft directory
 • Wrote a map-based tool to visualize aircraft specifications
 • Migrated all infrastructure from Acquia hosting to AWS IaC
 • Implemented local development environments, CI/CD pipelines, and QA best practices
-Technical Skills
+Technical Skills
 Languages: JavaScript, PHP, Bash, Rust, Python, C, Objective-C, Clojure
 Infrastructure-as-Code: Terraform/OpenTofu/Terragrunt, Ansible, CloudFormation
 Containerization: Kubernetes, Docker, LXC
@@ -61,13 +63,6 @@ Methodologies: DevOps, Agile, GitOps, DevSecOps, Scrum, Kanban
 Miscellaneous: JSON:API, GOFAI, L
 A
 TEX
-Side Projects (Just for Fun!)
-Oldstones: An implementation of Tim Boring’s simple orchestrator (Go)
-Goldentooth: Raspberry Pi Kubernetes cluster projects (Ansible, Terraform, Bash)
-Blackpool: An implementation of the Lox programming language and virtual machine (Rust)
-Sunhouse: A simple ray-tracing renderer (Rust)
-Greenstone: A cycle-accurate NES emulator that’s somewhere in the PPU implementation (Rust)
-CLORK: A port of ZORK I from the original microcomputer ZIL (Clojure)
 Education
 University of Nevada at Las Vegas Las Vegas, NV
 Bachelor of Arts in Computer Science May 2009 – Dec 2011
