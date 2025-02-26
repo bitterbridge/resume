@@ -102,6 +102,8 @@
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
+\newcommand{\resumeSubheadingNote}[1]{\vspace{0pt}\item\hspace{1em}\small{\emph{#1}}\vspace{-7pt}}
+
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
@@ -150,7 +152,8 @@
 \end{center}
 
 \begin{center}
-  Senior DevOps Engineer with 10+ years’ experience leading cloud infrastructure migrations, developing applications, optimizing CI/CD pipelines, and mentoring cross-functional teams to deliver reliable, scalable solutions.
+  Senior DevOps Engineer with 10+ years’ experience leading cloud infrastructure migrations, developing applications, building CI/CD pipelines,
+  and mentoring cross-functional teams to deliver reliable, scalable solutions.
 \end{center}
 
 %-----------EXPERIENCE-----------
@@ -161,24 +164,26 @@
       {Senior DevOps/Platform Engineer}{Oct. 2020 – Present}
       {Agile Six Applications, Inc}{San Diego, CA (Remote)}
       \resumeItemListStart
-        \resumeItem{Migrated the Check-In Experience product to a new AWS account}
-        \resumeItem{Served as Tech Lead for the VA.gov Content Management System}
+        \resumeItem{Migrated the Check-In Experience product to a new AWS account (see below)}
+        \resumeItem{Served as Tech Lead for the VA.gov Content Management System product (see below)}
         \resumeItem{Served on a task force to improve hiring practices for DevOps engineers}
         \resumeItem{Hired multiple Senior Engineers and a Software Quality Architect}
         \resumeItem{Contributed to contract proposals and case studies}
         \resumeItem{Ensured and documented compliance with regulations across multiple products}
+        \resumeItem{Developed and maintained CI/CD pipelines using Jenkins and GitHub Actions}
       \resumeItemListEnd
 
     \resumeSubheading
       {Senior Software/DevOps Engineer}{Jan. 2016 – Oct. 2020}
       {Convention News Company}{Midland Park, NJ (Remote)}
       \resumeItemListStart
-        \resumeItem{Architected infrastructure and built the content and account management services for FutureFlight.aero}
-        \resumeItem{Constructed backend services for Business Jet Traveler and Aviation International News}
-        \resumeItem{Migrated systems from Acquia hosting to AWS IaC, reducing IT operating costs by ~70\%}
+        \resumeItem{Architected infrastructure and built the content and account management services for FutureFlight.aero (see below)}
+        \resumeItem{Constructed backend services for Business Jet Traveler (see below) and Aviation International News}
+        \resumeItem{Migrated all products from Acquia hosting to AWS, reducing yearly IT operating costs by ~70\%}
         \resumeItem{Developed an app to centralize ad sales, subscriptions, and circulation data}
         \resumeItem{Guided and mentored junior engineers, emphasizing soft skills and engineering best practices}
-        \resumeItem{Created a Vagrant-based solution for local development}
+        \resumeItem{Created and maintained Vagrant (and, later, DrupalVM) development environments}
+        \resumeItem{Developed and maintained CI/CD pipelines using CodeBuild/CodePipeline}
       \resumeItemListEnd
 
     \resumeSubheading
@@ -189,7 +194,7 @@
         \resumeItem{Collaborated effectively within teams dispersed across six countries and four continents}
         \resumeItem{Led the adoption of Agile project management, Lean principles, and DevOps methodologies}
         \resumeItem{Introduced CI/CD pipelines, sharply reducing failure rate and manual testing toil}
-        \resumeItem{Automated aspects of certificate and configuration management}
+        \resumeItem{Automated certificate and configuration management for release processes}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -200,9 +205,11 @@
 
     \resumeProjectHeading
       {\textbf{VA.gov Check-In Experience} $|$ \emph{Terraform, Node.js, AWS, GitHub Actions}}{Feb. 2024 – Present}
+        \resumeSubheadingNote{CHIP (Check-In Integration Point) allows Veterans to check in for appointments at VA facilities.}
+        \resumeSubheadingNote{LoROTA (Low-Risk One-Time Authentication) allows checking in quickly while protecting PHI/PII.}
         \resumeItemListStart
-          \resumeItem{Migrated infrastructure for products between AWS accounts}
-          \resumeItem{Migrated Infrastructure-as-Code from CloudFormation to Terraform}
+          \resumeItem{Migrated infrastructure for CHIP, LoROTA, and related projects between AWS accounts}
+          \resumeItem{Migrated Infrastructure-as-Code for all projects from CloudFormation to Terraform}
           \resumeItem{Introduced and wrote Terraform tests for automated testing of reusable Terraform modules}
           \resumeItem{Introduced and wrote system tests spanning multiple products and their upstream integrations}
           \resumeItem{Migrated from using IAM service accounts to OIDC role assumption}
@@ -211,33 +218,38 @@
 
     \resumeProjectHeading
       {\textbf{VA.gov Content Management System} $|$ \emph{Drupal, PHP, Node.js, Ansible }}{Oct. 2020 – Feb. 2024}
+        \resumeSubheadingNote{The CMS allows VA.gov content editors to create, edit, and publish content.}
+        \resumeSubheadingNote{Content is delivered to VA.gov via a custom static build system.}
         \resumeItemListStart
-          \resumeItem{Directed development of Drupal CMS, which provides content for VA.gov}
-          \resumeItem{Maintained and improved infrastructure for Drupal CMS}
-          \resumeItem{Maintained and improved infrastructure for content releases on VA.gov}
-          \resumeItem{Parallelized test suite for Drupal CMS, reducing test time by 60\%}
+          \resumeItem{Directed primary development of the CMS's custom modules and ancillary services}
+          \resumeItem{Maintained, upgraded, and refined CI/CD pipelines in GitHub Actions and Jenkins}
+          \resumeItem{Parallelized test suite, reducing test time by 60\%}
+          \resumeItem{Led two major version Drupal upgrades of 8 -\> 9 -\> 10}
+          \resumeItem{Refactored the CMS' internal content release management system to reduce toil and deployment stress}
+          \resumeItem{Maintained and improved CI/CD pipelines for the content build and release processes}
           \resumeItem{Developed and documented procedures for disaster recovery, out-of-band deploys, etc}
-          \resumeItem{Led major version upgrades of 8 -\> 9 and 9 -\> 10 for Drupal CMS}
-          \resumeItem{Developed and maintained custom modules for Drupal CMS}
+          \resumeItem{Developed and maintained DDEV-based local development environments}
         \resumeItemListEnd
 
     \resumeProjectHeading
       {\textbf{FutureFlight.aero} $|$ \emph{Drupal, PHP, Node.js, Ansible, CloudFormation}}{Jan. 2019 – Oct. 2020}
+        \resumeSubheadingNote{FutureFlight is an industry news site with a directory of EVTOL aircraft and related services.}
         \resumeItemListStart
           \resumeItem{Architected server infrastructure for Drupal content management system}
           \resumeItem{Wrote Lambda function code for subscriber account services}
           \resumeItem{Designed and implemented infrastructure for subscriber account services}
           \resumeItem{Designed and implemented data model for EVTOL aircraft directory}
-          \resumeItem{Implemented local development environments, CI/CD pipelines, and QA best practices}
+          \resumeItem{Implemented local development environments using DrupalVM}
         \resumeItemListEnd
 
     \resumeProjectHeading
       {\textbf{Business Jet Traveler} $|$ \emph{Drupal, PHP, CloudFormation}}{Jan. 2018 – Dec. 2018}
+        \resumeSubheadingNote{Business Jet Traveler is a monthly magazine for private jet owners and operators.}
         \resumeItemListStart
           \resumeItem{Designed and implemented data model for aircraft directory}
           \resumeItem{Wrote a map-based tool to visualize aircraft specifications}
-          \resumeItem{Migrated all infrastructure from Acquia hosting to AWS IaC}
-          \resumeItem{Implemented local development environments, CI/CD pipelines, and QA best practices}
+          \resumeItem{Migrated all infrastructure from Acquia hosting to AWS in CloudFormation}
+          \resumeItem{Implemented and maintained local development environments using Vagrant across multiple OSes}
         \resumeItemListEnd
     \resumeSubHeadingListEnd
 
@@ -264,7 +276,7 @@
   \resumeSubHeadingListEnd
 
 %-----------PERSONAL PROJECTS-----------
-\section{Personal Projects}
+\section{Personal Projects (Just for Fun)}
   \resumeSubHeadingListStart
     \resumeListicleStart
       \resumeSideProjectListicleItem{https://github.com/ndouglas/blackpool/}{💻 Blackpool}{An implementation of the Lox programming language and virtual machine}{Rust} \\

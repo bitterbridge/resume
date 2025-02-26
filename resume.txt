@@ -1,58 +1,67 @@
 Nathan Douglas
 Phone (330) 998-8049 | @ brisk.bell8311@tenesm.us | LINKEDIN linkedin.com/in/nug-doug | Github github.com/ndouglas
 Senior DevOps Engineer with 10+ years’ experience leading cloud infrastructure migrations, developing applications,
-optimizing CI/CD pipelines, and mentoring cross-functional teams to deliver reliable, scalable solutions.
+building CI/CD pipelines, and mentoring cross-functional teams to deliver reliable, scalable solutions.
 Experience
 Senior DevOps/Platform Engineer Oct. 2020 – Present
 Agile Six Applications, Inc San Diego, CA (Remote)
-• Migrated the Check-In Experience product to a new AWS account
-• Served as Tech Lead for the VA.gov Content Management System
+• Migrated the Check-In Experience product to a new AWS account (see below)
+• Served as Tech Lead for the VA.gov Content Management System product (see below)
 • Served on a task force to improve hiring practices for DevOps engineers
 • Hired multiple Senior Engineers and a Software Quality Architect
 • Contributed to contract proposals and case studies
 • Ensured and documented compliance with regulations across multiple products
+• Developed and maintained CI/CD pipelines using Jenkins and GitHub Actions
 Senior Software/DevOps Engineer Jan. 2016 – Oct. 2020
 Convention News Company Midland Park, NJ (Remote)
-• Architected infrastructure and built the content and account management services for FutureFlight.aero
-• Constructed backend services for Business Jet Traveler and Aviation International News
-• Migrated systems from Acquia hosting to AWS IaC, reducing IT operating costs by 70%
+• Architected infrastructure and built the content and account management services for FutureFlight.aero (see below)
+• Constructed backend services for Business Jet Traveler (see below) and Aviation International News
+• Migrated all products from Acquia hosting to AWS, reducing yearly IT operating costs by 70%
 • Developed an app to centralize ad sales, subscriptions, and circulation data
 • Guided and mentored junior engineers, emphasizing soft skills and engineering best practices
-• Created a Vagrant-based solution for local development
+• Created and maintained Vagrant (and, later, DrupalVM) development environments
+• Developed and maintained CI/CD pipelines using CodeBuild/CodePipeline
 Software Engineer Jan. 2012 – Dec. 2015
 DEVONtechnologies Bietigheim-Bissingen, Germany (Remote)
 • Developed, launched, and maintained sync technologies for flagship apps
 • Collaborated effectively within teams dispersed across six countries and four continents
 • Led the adoption of Agile project management, Lean principles, and DevOps methodologies
 • Introduced CI/CD pipelines, sharply reducing failure rate and manual testing toil
-• Automated aspects of certificate and configuration management
+• Automated certificate and configuration management for release processes
 Major Projects
 VA.gov Check-In Experience | Terraform, Node.js, AWS, GitHub Actions Feb. 2024 – Present
-• Migrated infrastructure for products between AWS accounts
-• Migrated Infrastructure-as-Code from CloudFormation to Terraform
+CHIP (Check-In Integration Point) allows Veterans to check in for appointments at VA facilities.
+LoROTA (Low-Risk One-Time Authentication) allows checking in quickly while protecting PHI/PII.
+• Migrated infrastructure for CHIP, LoROTA, and related projects between AWS accounts
+• Migrated Infrastructure-as-Code for all projects from CloudFormation to Terraform
 • Introduced and wrote Terraform tests for automated testing of reusable Terraform modules
 • Introduced and wrote system tests spanning multiple products and their upstream integrations
 • Migrated from using IAM service accounts to OIDC role assumption
 • Managed compliance and collaboration in ATO (Authority to Operate) and PDB (Product Decision Board) processes
 VA.gov Content Management System | Drupal, PHP, Node.js, Ansible Oct. 2020 – Feb. 2024
-• Directed development of Drupal CMS, which provides content for VA.gov
-• Maintained and improved infrastructure for Drupal CMS
-• Maintained and improved infrastructure for content releases on VA.gov
-• Parallelized test suite for Drupal CMS, reducing test time by 60%
+The CMS allows VA.gov content editors to create, edit, and publish content.
+Content is delivered to VA.gov via a custom static build system.
+• Directed primary development of the CMS’s custom modules and ancillary services
+• Maintained, upgraded, and refined CI/CD pipelines in GitHub Actions and Jenkins
+• Parallelized test suite, reducing test time by 60%
+• Led two major version Drupal upgrades of 8 - 9 - 10
+• Refactored the CMS’ internal content release management system to reduce toil and deployment stress
+• Maintained and improved CI/CD pipelines for the content build and release processes
 • Developed and documented procedures for disaster recovery, out-of-band deploys, etc
-• Led major version upgrades of 8 - 9 and 9 - 10 for Drupal CMS
-• Developed and maintained custom modules for Drupal CMS
+• Developed and maintained DDEV-based local development environments
 FutureFlight.aero | Drupal, PHP, Node.js, Ansible, CloudFormation Jan. 2019 – Oct. 2020
+FutureFlight is an industry news site with a directory of EVTOL aircraft and related services.
 • Architected server infrastructure for Drupal content management system
 • Wrote Lambda function code for subscriber account services
 • Designed and implemented infrastructure for subscriber account services
-• Designed and implemented data model for EVTOL aircraft directory
-• Implemented local development environments, CI/CD pipelines, and QA best practices
+• Designed and implemented data model for EVTOL aircraft directory
+• Implemented local development environments using DrupalVM
 Business Jet Traveler | Drupal, PHP, CloudFormation Jan. 2018 – Dec. 2018
+Business Jet Traveler is a monthly magazine for private jet owners and operators.
 • Designed and implemented data model for aircraft directory
 • Wrote a map-based tool to visualize aircraft specifications
-• Migrated all infrastructure from Acquia hosting to AWS IaC
-• Implemented local development environments, CI/CD pipelines, and QA best practices
+• Migrated all infrastructure from Acquia hosting to AWS in CloudFormation
+• Implemented and maintained local development environments using Vagrant across multiple OSes
 Technical Skills
 Languages: JavaScript, PHP, Bash, Rust, Python, C, Objective-C, Clojure
 Infrastructure-as-Code: Terraform/OpenTofu/Terragrunt, Ansible, CloudFormation
@@ -66,7 +75,7 @@ TEX
 Education
 University of Nevada at Las Vegas Las Vegas, NV
 Bachelor of Arts in Computer Science May 2009 – Dec 2011
-Personal Projects
+Personal Projects (Just for Fun)
 Blackpool: An implementation of the Lox programming language and virtual machine (Rust)
 Goldentooth: Raspberry Pi Kubernetes cluster projects (Ansible, Terraform, Bash)
 Greenstone: A cycle-accurate NES emulator (Rust)
