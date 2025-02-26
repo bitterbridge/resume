@@ -1,3 +1,4 @@
+% !TeX program = lualatex
 % Nug Doug's Tunable Résumé.
 %
 % (c) 2024 Nathan Douglas <brisk.bell8333@tenesm.us> https://darkdell.net
@@ -6,57 +7,273 @@
 % GENERAL NOTE:  There may be some notes specific to myself. If you're only
 % interested in my LaTeX source or it doesn't make sense, please disregard.
 
-\documentclass[14pt,letterpaper]{article}
+\documentclass[letterpaper,11pt]{article}
 
-% Get my data.
-\input{me.tex}
-
-% Packages
-\usepackage[T1]{fontenc}
-\usepackage[empty]{fullpage}
-\usepackage[letterpaper,margin=0.8in]{geometry}
-\usepackage[pdftex]{hyperref}
 \usepackage{latexsym}
-\usepackage{mdwlist}
-\usepackage{textcomp}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{fontspec}
 
-% Set the page style to empty.
-\pagestyle{empty}
+\directlua{luaotfload.add_fallback
+  ("emojifallback",
+    {
+      "NotoColorEmoji:mode=harf;"
+    }
+  )}
 
-% URL style
-\urlstyle{same}
+\setmainfont{texgyretermes-regular}[
+  Extension      = .otf ,
+  BoldFont       = texgyretermes-bold,
+  ItalicFont     = texgyretermes-italic,
+  BoldItalicFont = texgyretermes-bolditalic,
+  RawFeature={fallback=emojifallback}
+]
 
-% Height of the text area of the page
-\textheight=9.0in
+\def\pdfglyphtounicode#1#2{}
 
-% Set the page margins
-\setlength{\tabcolsep}{0in}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 
 % Adjust margins
-\addtolength{\oddsidemargin}{-0.375in}
-\addtolength{\evensidemargin}{0.375in}
-\addtolength{\textwidth}{0.5in}
-\addtolength{\topmargin}{-.375in}
-\addtolength{\textheight}{0.75in}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
 
-% Begin the document
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+% \pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+
+\newcommand{\emoji}[1]{\ifmmode \text{\emojifont{#1}} \else \emojifont{#1} \fi}
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\newenvironment{resumeListicle}{
+    \small        % or whatever spacing you want
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+}{}
+
+\newcommand{\resumeListicleStart}{\begin{resumeListicle}}
+\newcommand{\resumeListicleEnd}{\end{resumeListicle}}
+\newcommand{\resumeListicleItem}[2]{%
+  \item \textbf{#1}: #2%
+}
+\newcommand{\resumeSideProjectListicleItem}[4]{%
+  \item \textbf{\href{#1}{#2}}: #3 (\emph{#4})%
+}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{document}
 
-% Header with personal information
-\MyHeader
+\newcommand{\MyEmail}{brisk.bell8311@tenesm.us}
+\newcommand{\MyTitle}{Senior DevOps/Platform/Site Reliability Engineer}
+\newcommand{\MyFirstName}{Nathan}
+\newcommand{\MyLastName}{Douglas}
+\newcommand{\MyFullName}{Nathan Douglas}
+\newcommand{\MyPhoneNumber}{(330) 998-8049}
+\newcommand{\MyPhoneNumberPlain}{+13309988049}
+\newcommand{\MyWebsite}{darkdell.net}
+\newcommand{\MyLinkedInUsername}{nug-doug}
+\newcommand{\MyGitHubUsername}{ndouglas}
 
-% Things I did
-\subsection*{Experience}
-\MyExperience
+%----------HEADING----------
 
-% Things I learned
-\subsection*{Education}
-\MyEducation
+\begin{center}
+  \textbf{\Huge \scshape \MyFullName} \\ \vspace{1pt}
+  \small \faPhone\hspace{0.5em}\MyPhoneNumber\hspace{0.25em} $|$ \href{mailto:\MyEmail}{\faAt\hspace{0.5em}\underline{\MyEmail}} $|$ 
+  \href{https://linkedin.com/in/\MyLinkedInUsername}{\faLinkedin\hspace{0.5em}\underline{linkedin.com/in/\MyLinkedInUsername}} $|$
+  \href{https://github.com/\MyGitHubUsername}{\faGithub\hspace{0.5em}\underline{github.com/\MyGitHubUsername}}
+\end{center}
 
-% Things I can do
-\subsection*{Skills}
-\MySkills
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
 
-% End the document
+    \resumeSubheading
+      {Senior DevOps/Platform Engineer}{Oct. 2020 – Present}
+      {Agile Six Applications, Inc}{San Diego, CA (Remote)}
+      \resumeItemListStart
+        \resumeItem{Migrated the Check-In Experience product to a new AWS account}
+        \resumeItem{Served as Tech Lead for the VA.gov Content Management System}
+        \resumeItem{Served on a task force to improve hiring practices for DevOps engineers}
+        \resumeItem{Hired multiple Senior Engineers and a Software Quality Architect}
+        \resumeItem{Contributed to contract proposals and case studies}
+        \resumeItem{Ensured and documented compliance with regulations across multiple products}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Senior Software/DevOps Engineer}{Jan. 2016 – Oct. 2020}
+      {Convention News Company}{Midland Park, NJ (Remote)}
+      \resumeItemListStart
+        \resumeItem{Architected infrastructure and built the content and account management services for FutureFlight.aero}
+        \resumeItem{Constructed backend services for Business Jet Traveler and Aviation International News}
+        \resumeItem{Developed an app to centralize ad sales, subscriptions, and circulation data}
+        \resumeItem{Migrated systems from Acquia hosting to AWS IaC, reducing IT operating costs by ~70\%}
+        \resumeItem{Guided and mentored junior engineers, emphasizing soft skills and engineering best practices}
+        \resumeItem{Created a Vagrant-based solution for local development}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Software Engineer}{Jan. 2012 – Dec. 2015}
+      {DEVONtechnologies}{Bietigheim-Bissingen, Germany (Remote)}
+      \resumeItemListStart
+        \resumeItem{Developed, launched, and maintained sync technologies for flagship apps}
+        \resumeItem{Collaborated effectively within teams dispersed across six countries and four continents}
+        \resumeItem{Led the adoption of Agile project management, Lean principles, and DevOps methodologies}
+        \resumeItem{Introduced CI/CD pipelines, sharply reducing failure rate and manual testing toil}
+        \resumeItem{Automated aspects of certificate and configuration management}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Major Projects}
+  \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+      {\textbf{VA.gov Check-In Experience} $|$ \emph{Terraform, Node.js, AWS, GitHub Actions}}{Feb. 2024 – Present}
+        \resumeItemListStart
+          \resumeItem{Migrated infrastructure for products between AWS accounts}
+          \resumeItem{Migrated Infrastructure-as-Code from CloudFormation to Terraform}
+          \resumeItem{Introduced and wrote Terraform tests for automated testing of reusable Terraform modules}
+          \resumeItem{Introduced and wrote system tests spanning multiple products and their upstream integrations}
+          \resumeItem{Migrated from using IAM service accounts to OIDC role assumption}
+          \resumeItem{Managed compliance and collaboration in ATO (Authority to Operate) and PDB (Product Decision Board) processes}
+        \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{VA.gov Content Management System} $|$ \emph{Drupal, PHP, Node.js, Ansible }}{Oct. 2020 – Feb. 2024}
+        \resumeItemListStart
+          \resumeItem{Directed development of Drupal CMS, which provides content for VA.gov}
+          \resumeItem{Maintained and improved infrastructure for Drupal CMS}
+          \resumeItem{Maintained and improved infrastructure for content releases on VA.gov}
+          \resumeItem{Parallelized test suite for Drupal CMS, reducing test time by 60\%}
+          \resumeItem{Developed and documented procedures for disaster recovery, out-of-band deploys, etc}
+          \resumeItem{Led major version upgrades of 8 -\> 9 and 9 -\> 10 for Drupal CMS}
+          \resumeItem{Developed and maintained custom modules for Drupal CMS}
+        \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{FutureFlight.aero} $|$ \emph{Drupal, PHP, Node.js, Ansible, CloudFormation}}{Jan. 2019 – Oct. 2020}
+        \resumeItemListStart
+          \resumeItem{Architected server infrastructure for Drupal content management system}
+          \resumeItem{Wrote Lambda function code for subscriber account services}
+          \resumeItem{Designed and implemented infrastructure for subscriber account services}
+          \resumeItem{Designed and implemented data model for EVTOL aircraft directory}
+          \resumeItem{Implemented local development environments, CI/CD pipelines, and QA best practices}
+        \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Business Jet Traveler} $|$ \emph{Drupal, PHP, Node.js, Ansible, Terraform, GitHub Actions}}{Jan. 2018 – Dec. 2018}
+        \resumeItemListStart
+          \resumeItem{Designed and implemented data model for aircraft directory}
+          \resumeItem{Wrote a map-based tool to visualize aircraft specifications}
+          \resumeItem{Migrated all infrastructure from Acquia hosting to AWS IaC}
+          \resumeItem{Implemented local development environments, CI/CD pipelines, and QA best practices}
+        \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+  \resumeSubHeadingListStart
+    \resumeListicleStart
+      \resumeListicleItem{Languages}{JavaScript, PHP, Bash, Rust, Python, C, Objective-C, Clojure } \\
+      \resumeListicleItem{Infrastructure-as-Code}{Terraform/OpenTofu/Terragrunt, Ansible, CloudFormation } \\
+      \resumeListicleItem{Containerization}{Kubernetes, Docker, LXC } \\
+      \resumeListicleItem{CI/CD}{GitHub Actions, Jenkins, AWS CodeBuild } \\
+      \resumeListicleItem{Logging/Monitoring}{Datadog, AWS CloudWatch, PagerDuty, Sentry } \\
+      \resumeListicleItem{Methodologies}{DevOps, Agile, GitOps, DevSecOps, Scrum, Kanban } \\
+      \resumeListicleItem{Miscellaneous}{JSON:API, GOFAI, \LaTeX{} } \\
+    \resumeListicleEnd
+  \resumeSubHeadingListEnd
+
+%-----------SIDE PROJECTS-----------
+\section{Side Projects (Just for Fun!)}
+  \resumeSubHeadingListStart
+    \resumeListicleStart
+      \resumeSideProjectListicleItem{https://github.com/ndouglas/oldstones/}{🪨 Oldstones}{An implementation of Tim Boring's simple orchestrator}{Go} \\
+      \resumeSideProjectListicleItem{https://github.com/goldentooth/}{🦷 Goldentooth}{Raspberry Pi Kubernetes cluster projects}{Ansible, Terraform, Bash} \\
+      \resumeSideProjectListicleItem{https://github.com/ndouglas/blackpool/}{💻 Blackpool}{An implementation of the Lox programming language and virtual machine}{Rust} \\
+      \resumeSideProjectListicleItem{https://github.com/ndouglas/sunhouse/}{🌈 Sunhouse}{A simple ray-tracing renderer}{Rust} \\
+      \resumeSideProjectListicleItem{https://github.com/ndouglas/greenstone/}{🎮 Greenstone}{A cycle-accurate NES emulator that's somewhere in the PPU implementation}{Rust} \\
+      \resumeSideProjectListicleItem{https://github.com/ndouglas/clork/}{📜 CLORK}{A port of \emph{ZORK I} from the original microcomputer ZIL}{Clojure} \\
+    \resumeListicleEnd
+  \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Nevada at Las Vegas}{Las Vegas, NV}
+      {Bachelor of Arts in Computer Science}{May 2009 – Dec 2011}
+  \resumeSubHeadingListEnd
+
+  %-----------THAT'S ALL, FOLKS!-----------
 \end{document}
