@@ -1,7 +1,7 @@
 Nathan Douglas
 Phone (330) 998-8049 | @ brisk.bell8311@tenesm.us | LINKEDIN linkedin.com/in/nug-doug | Github github.com/ndouglas
-Senior DevOps Engineer with 10+ years’ experience leading cloud infrastructure migrations, optimizing CI/CD pipelines,
-and mentoring cross-functional teams to deliver reliable, scalable solutions.
+Senior DevOps Engineer with 10+ years’ experience leading cloud infrastructure migrations, developing applications,
+optimizing CI/CD pipelines, and mentoring cross-functional teams to deliver reliable, scalable solutions.
 Experience
 Senior DevOps/Platform Engineer Oct. 2020 – Present
 Agile Six Applications, Inc San Diego, CA (Remote)
@@ -66,4 +66,11 @@ TEX
 Education
 University of Nevada at Las Vegas Las Vegas, NV
 Bachelor of Arts in Computer Science May 2009 – Dec 2011
+Personal Projects
+Blackpool: An implementation of the Lox programming language and virtual machine (Rust)
+Goldentooth: Raspberry Pi Kubernetes cluster projects (Ansible, Terraform, Bash)
+Greenstone: A cycle-accurate NES emulator (Rust)
+Sunhouse: A simple ray-tracing renderer (Rust)
+Oldstones: An implementation of Tim Boring’s simple orchestrator (Go)
+CLORK: A port of ZORK I from the original microcomputer ZIL (Clojure)
 

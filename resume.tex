@@ -23,12 +23,24 @@
 \usepackage{fontawesome5}
 \usepackage{fontspec}
 
+\directlua{luaotfload.add_fallback
+  ("emojifallback",
+    {
+      "NotoColorEmoji:mode=harf;"
+    }
+  )}
+
 \setmainfont{texgyretermes-regular}[
   Extension      = .otf ,
   BoldFont       = texgyretermes-bold,
   ItalicFont     = texgyretermes-italic,
   BoldItalicFont = texgyretermes-bolditalic,
+  RawFeature={fallback=emojifallback}
 ]
+
+\def\pdfglyphtounicode#1#2{}
+
+\input{glyphtounicode}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -137,7 +149,9 @@
   \href{https://github.com/\MyGitHubUsername}{\faGithub\hspace{0.5em}\underline{github.com/\MyGitHubUsername}}
 \end{center}
 
-Senior DevOps Engineer with 10+ years’ experience leading cloud infrastructure migrations, optimizing CI/CD pipelines, and mentoring cross-functional teams to deliver reliable, scalable solutions.
+\begin{center}
+  Senior DevOps Engineer with 10+ years’ experience leading cloud infrastructure migrations, developing applications, optimizing CI/CD pipelines, and mentoring cross-functional teams to deliver reliable, scalable solutions.
+\end{center}
 
 %-----------EXPERIENCE-----------
 \section{Experience}
@@ -247,6 +261,19 @@ Senior DevOps Engineer with 10+ years’ experience leading cloud infrastructure
     \resumeSubheading
       {University of Nevada at Las Vegas}{Las Vegas, NV}
       {Bachelor of Arts in Computer Science}{May 2009 – Dec 2011}
+  \resumeSubHeadingListEnd
+
+%-----------PERSONAL PROJECTS-----------
+\section{Personal Projects}
+  \resumeSubHeadingListStart
+    \resumeListicleStart
+      \resumeSideProjectListicleItem{https://github.com/ndouglas/blackpool/}{💻 Blackpool}{An implementation of the Lox programming language and virtual machine}{Rust} \\
+      \resumeSideProjectListicleItem{https://github.com/goldentooth/}{🦷 Goldentooth}{Raspberry Pi Kubernetes cluster projects}{Ansible, Terraform, Bash} \\
+      \resumeSideProjectListicleItem{https://github.com/ndouglas/greenstone/}{🎮 Greenstone}{A cycle-accurate NES emulator}{Rust} \\
+      \resumeSideProjectListicleItem{https://github.com/ndouglas/sunhouse/}{🌈 Sunhouse}{A simple ray-tracing renderer}{Rust} \\
+      \resumeSideProjectListicleItem{https://github.com/ndouglas/oldstones/}{🪨 Oldstones}{An implementation of Tim Boring's simple orchestrator}{Go} \\
+      \resumeSideProjectListicleItem{https://github.com/ndouglas/clork/}{📜 CLORK}{A port of \emph{ZORK I} from the original microcomputer ZIL}{Clojure} \\
+    \resumeListicleEnd
   \resumeSubHeadingListEnd
 
   %-----------THAT'S ALL, FOLKS!-----------
