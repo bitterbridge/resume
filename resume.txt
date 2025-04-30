@@ -81,9 +81,10 @@ Bachelor of Fine Arts in Creative Writing & Bachelor of Arts in Philosophy (Inco
 Personal Projects (Just for Fun)
 Whispers: A self-organizing, belief-driven mesh where nodes propose, verify, and evolve solutions through dynamic,
 decentralized consensus (Rust)
-Goldentooth: Raspberry Pi Kubernetes/Slurm/Nomad Cluster/Chaos Zoo (Ansible, Terraform, Bash)
-Blackpool: An implementation of the Lox programming language and virtual machine (Rust)
+Goldentooth: Raspberry Pi Kubernetes/Slurm/Nomad Cluster/Chaos Zoo, infrastructure red in tooth and claw (Ansible,
+Terraform, Bash)
+Blackpool: An implementation of Bob Nystrom’s Lox programming language and virtual machine (Rust)
 Greenstone: A cycle-accurate NES emulator (Rust)
 Sunhouse: A simple ray-tracing renderer (Rust)
-CLORK: A port of ZORK I from the original microcomputer ZIL (Clojure)
+CLORK: A port (early stages) of ZORK I from the original microcomputer ZIL (Clojure)
 
