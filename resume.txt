@@ -1,34 +1,32 @@
-Nathan Douglas
-Phone (330) 998-8049 | @ brisk.bell8311@tenesm.us | LINKEDIN linkedin.com/in/nug-doug | Github github.com/ndouglas
-Senior DevOps Engineer with 10+ years’ experience leading cloud infrastructure migrations, developing applications,
-building CI/CD pipelines, and mentoring cross-functional teams to deliver reliable, scalable solutions.
+Nathan “Nug Doug” Douglas
+Phone (330) 998-8049 | @ clean.post9026@tenesm.us | LINKEDIN linkedin.com/in/nug-doug | Github github.com/ndouglas
+I’m looking for a role that blends systems thinking, creative autonomy, and technical depth — ideally at the intersection of
+machine learning, simulation, and infrastructure. I thrive in environments that value elegance, exploration, and play, where
+weirdness is a feature, not a bug. I want to expand the frontiers of science, benefit humanity, and blow minds.
 Experience
 Senior DevOps/Platform Engineer Oct. 2020 – Present
 Agile Six Applications, Inc San Diego, CA (Remote)
 (on contract to the U.S. Department of Veterans Affairs)
-• Migrated the VA.gov Check-In Experience product to a new AWS account
+• Migrated and modernized the VA.gov Check-In Experience products
 • Served as Tech Lead for the VA.gov Content Management System product
 • Served on a task force to improve hiring practices for DevOps engineers
 • Hired multiple Senior Engineers and a Software Quality Architect
 • Contributed to contract proposals and case studies
 • Ensured and documented compliance with regulations across multiple products
-• Developed and maintained CI/CD pipelines using Jenkins and GitHub Actions
 Senior Software/DevOps Engineer Jan. 2016 – Oct. 2020
 Convention News Company Midland Park, NJ (Remote)
-• Architected infrastructure and built the content and account management services for FutureFlight.aero
-• Constructed backend services for Business Jet Traveler and Aviation International News
+• Architected infrastructure and built content and account management and backend services for FutureFlight.aero
+• Designed and constructed API and backend services for Business Jet Traveler and Aviation International News
 • Migrated all products from Acquia hosting to AWS, reducing yearly IT operating costs by 70%
-• Developed an app to centralize ad sales, subscriptions, and circulation data
+• Developed bespoke app to centralize ad sales, subscriptions, and circulation data
 • Guided and mentored junior engineers, emphasizing soft skills and engineering best practices
-• Created and maintained Vagrant (and, later, DrupalVM) development environments
-• Developed and maintained CI/CD pipelines using CodeBuild/CodePipeline
+• Created and maintained Vagrant, Docker, and DrupalVM development environments
+• Developed and maintained CI/CD pipelines for all products
 Software Engineer Jan. 2012 – Dec. 2015
 DEVONtechnologies Bietigheim-Bissingen, Germany (Remote)
-• Developed, launched, and maintained sync technologies for flagship apps
-• Collaborated effectively within teams dispersed across six countries and four continents
-• Led the adoption of Agile project management, Lean principles, and DevOps methodologies
-• Introduced CI/CD pipelines, sharply reducing failure rate and manual testing toil
-• Automated certificate and configuration management for release processes
+• Developed, launched, and maintained multi-leader sync technologies for flagship apps
+• Led the adoption of Agile project management and development practices
+• Introduced CI/CD pipelines and other DevOps best practices
 Major Projects
 VA.gov Check-In Experience | Terraform, Node.js, AWS, GitHub Actions Feb. 2024 – Present
 CHIP (Check-In Integration Point) allows Veterans to check in for appointments at VA facilities.
@@ -47,9 +45,9 @@ Content is delivered to VA.gov via a custom static build system.
 • Parallelized test suite, reducing test time by 60%
 • Led two major version Drupal upgrades of 8 - 9 - 10
 • Refactored the CMS’ internal content release management system to reduce toil and deployment stress
-• Maintained and improved CI/CD pipelines for the content build and release processes
+• Maintained and improved CI/CD pipelines for the content build and release processes
 • Developed and documented procedures for disaster recovery, out-of-band deploys, etc
-• Developed and maintained DDEV-based local development environments
+• Developed and maintained DDEV-based local development environments
 FutureFlight.aero | Drupal, PHP, Node.js, Ansible, CloudFormation Jan. 2019 – Oct. 2020
 FutureFlight is an industry news site with a directory of EVTOL aircraft and related services.
 • Architected server infrastructure for Drupal content management system
@@ -64,23 +62,28 @@ Business Jet Traveler is a monthly magazine for private jet owners and operators
 • Migrated all infrastructure from Acquia hosting to AWS in CloudFormation
 • Implemented and maintained local development environments using Vagrant across multiple OSes
 Technical Skills
-Languages: JavaScript, PHP, Bash, Rust, Python, C, Objective-C, Clojure
-Infrastructure-as-Code: Terraform/OpenTofu/Terragrunt, Ansible, CloudFormation
-Containerization: Kubernetes, Docker, LXC
-CI/CD: GitHub Actions, Jenkins, AWS CodeBuild
-Logging/Monitoring: Datadog, AWS CloudWatch, PagerDuty, Sentry
-Methodologies: DevOps, Agile, GitOps, DevSecOps, Scrum, Kanban
-Miscellaneous: JSON:API, GOFAI, L
+Languages: JavaScript, Bash, Rust, Python, C, PHP, Go, Objective-C, Clojure
+Infrastructure-as-Code: Terraform, Ansible, CloudFormation
+Containerization/Orchestration: Kubernetes, Docker/Docker-Compose, LXC, Nomad
+CI/CD: GitHub Actions, Jenkins, CodeBuild/CodePipeline
+Logging/Monitoring: Datadog, CloudWatch, PagerDuty, Sentry, OpenTelemetry
+Methodologies: DevOps, GitOps, DevSecOps, MLOps, Agile, Scrum, Kanban
+Miscellaneous: JSON:API, GOFAI, Slurm, Consul, Envoy, Vault, L
 A
 TEX
 Education
 University of Nevada at Las Vegas Las Vegas, NV
 Bachelor of Arts in Computer Science May 2009 – Dec 2011
+University of Akron Akron, OH
+Bachelor of Arts in English Literature (Incomplete) Sep 2006 – May 2008
+Bowling Green State University Bowling Green, OH
+Bachelor of Fine Arts in Creative Writing & Bachelor of Arts in Philosophy (Incomplete) Sep 2003 – Dec 2005
 Personal Projects (Just for Fun)
+Whispers: A self-organizing, belief-driven mesh where nodes propose, verify, and evolve solutions through dynamic,
+decentralized consensus (Rust)
+Goldentooth: Raspberry Pi Kubernetes/Slurm/Nomad Cluster/Chaos Zoo (Ansible, Terraform, Bash)
 Blackpool: An implementation of the Lox programming language and virtual machine (Rust)
-Goldentooth: Raspberry Pi Kubernetes cluster projects (Ansible, Terraform, Bash)
 Greenstone: A cycle-accurate NES emulator (Rust)
 Sunhouse: A simple ray-tracing renderer (Rust)
-Oldstones: An implementation of Tim Boring’s simple orchestrator (Go)
 CLORK: A port of ZORK I from the original microcomputer ZIL (Clojure)
 
