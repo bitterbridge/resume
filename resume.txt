@@ -77,8 +77,7 @@ Bachelor of Arts in Computer Science May 2009 – Dec 2011
 Personal Projects (Just for Fun)
 Whispers: A self-organizing, belief-driven mesh where nodes propose, verify, and evolve solutions through dynamic,
 decentralized consensus (Rust)
-Goldentooth: Raspberry Pi Kubernetes/Slurm/Nomad Cluster/Chaos Zoo, infrastructure red in tooth and claw (Ansible,
-Terraform, Bash)
+Goldentooth: Raspberry Pi Kubernetes/Slurm/Nomad Cluster, infrastructure red in tooth and claw (Ansible, Terraform, Bash)
 Blackpool: An implementation of Bob Nystrom’s Lox programming language and virtual machine (Rust)
 Greenstone: A cycle-accurate NES emulator (Rust)
 Sunhouse: A simple ray-tracing renderer (Rust)
