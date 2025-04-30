@@ -74,10 +74,6 @@ TEX
 Education
 University of Nevada at Las Vegas Las Vegas, NV
 Bachelor of Arts in Computer Science May 2009 – Dec 2011
-University of Akron Akron, OH
-Bachelor of Arts in English Literature (Incomplete) Sep 2006 – May 2008
-Bowling Green State University Bowling Green, OH
-Bachelor of Fine Arts in Creative Writing & Bachelor of Arts in Philosophy (Incomplete) Sep 2003 – Dec 2005
 Personal Projects (Just for Fun)
 Whispers: A self-organizing, belief-driven mesh where nodes propose, verify, and evolve solutions through dynamic,
 decentralized consensus (Rust)
