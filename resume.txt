@@ -1,85 +1,41 @@
-Nathan “Nug Doug” Douglas
+Nathan Douglas
 Phone (330) 998-8049 | @ clean.post9026@tenesm.us | LINKEDIN linkedin.com/in/nug-doug | Github github.com/ndouglas
-I’m looking for a role that blends systems thinking, creative autonomy, and technical depth — ideally at the intersection of
-machine learning, simulation, and infrastructure. I thrive in environments that value elegance, exploration, and play, where
-weirdness is a feature, not a bug. I want to expand the frontiers of science, benefit humanity, and blow minds.
+Platform engineer with 12+ years building infrastructure for distributed systems. Currently focused on ML/HPC
+infrastructure: Kubernetes, Slurm, GPU workloads. Seeking roles bridging platform engineering and scientific computing.
 Experience
-Senior DevOps/Platform Engineer Oct. 2020 – Present
-Agile Six Applications, Inc San Diego, CA (Remote)
-(on contract to the U.S. Department of Veterans Affairs)
-• Migrated and modernized the VA.gov Check-In Experience products
-• Served as Tech Lead for the VA.gov Content Management System product
-• Served on a task force to improve hiring practices for DevOps engineers
-• Hired multiple Senior Engineers and a Software Quality Architect
-• Contributed to contract proposals and case studies
-• Ensured and documented compliance with regulations across multiple products
+Senior Platform Engineer Oct. 2020 – Present
+Agile Six Applications, Inc (contract to U.S. Department of Veterans Affairs) Remote
+• Migrated VA.gov Check-In infrastructure between AWS accounts; converted CloudFormation to Terraform
+• Led VA.gov CMS team through two major Drupal upgrades (8 → 9 → 10) with zero unplanned downtime
+• Parallelized test suite, reducing CI time by 60%; built system tests spanning multiple products and upstream integrations
+• Architected content release pipeline serving VA.gov’s 300K+ pages to millions of veterans
+• Managed ATO compliance for PHI/PII-handling systems
 Senior Software/DevOps Engineer Jan. 2016 – Oct. 2020
-Convention News Company Midland Park, NJ (Remote)
-• Architected infrastructure and built content and account management and backend services for FutureFlight.aero
-• Designed and constructed API and backend services for Business Jet Traveler and Aviation International News
-• Migrated all products from Acquia hosting to AWS, reducing yearly IT operating costs by 70%
-• Developed bespoke app to centralize ad sales, subscriptions, and circulation data
-• Guided and mentored junior engineers, emphasizing soft skills and engineering best practices
-• Created and maintained Vagrant, Docker, and DrupalVM development environments
-• Developed and maintained CI/CD pipelines for all products
+Convention News Company Remote
+• Migrated all products from Acquia to AWS, reducing yearly infrastructure costs by 70%
+• Architected infrastructure and backend services for FutureFlight.aero and Business Jet Traveler
+• Built Lambda-based subscriber services and data pipelines for ad sales and circulation
+• Established CI/CD pipelines and containerized development environments across all products
 Software Engineer Jan. 2012 – Dec. 2015
-DEVONtechnologies Bietigheim-Bissingen, Germany (Remote)
-• Developed, launched, and maintained multi-leader sync technologies for flagship apps
-• Led the adoption of Agile project management and development practices
-• Introduced CI/CD pipelines and other DevOps best practices
-Major Projects
-VA.gov Check-In Experience | Terraform, Node.js, AWS, GitHub Actions Feb. 2024 – Present
-CHIP (Check-In Integration Point) allows Veterans to check in for appointments at VA facilities.
-LoROTA (Low-Risk One-Time Authentication) allows checking in quickly while protecting PHI/PII.
-• Migrated infrastructure for CHIP, LoROTA, and related projects between AWS accounts
-• Migrated Infrastructure-as-Code for all projects from CloudFormation to Terraform
-• Introduced and wrote Terraform tests for automated testing of reusable Terraform modules
-• Introduced and wrote system tests spanning multiple products and their upstream integrations
-• Migrated from using IAM service accounts to OIDC role assumption
-• Managed compliance and collaboration in ATO (Authority to Operate) and PDB (Product Decision Board) processes
-VA.gov Content Management System | Drupal, PHP, Node.js, Ansible Oct. 2020 – Feb. 2024
-The CMS allows VA.gov content editors to create, edit, and publish content.
-Content is delivered to VA.gov via a custom static build system.
-• Directed primary development of the CMS’s custom modules and ancillary services
-• Maintained, upgraded, and refined CI/CD pipelines in GitHub Actions and Jenkins
-• Parallelized test suite, reducing test time by 60%
-• Led two major version Drupal upgrades of 8 - 9 - 10
-• Refactored the CMS’ internal content release management system to reduce toil and deployment stress
-• Maintained and improved CI/CD pipelines for the content build and release processes
-• Developed and documented procedures for disaster recovery, out-of-band deploys, etc
-• Developed and maintained DDEV-based local development environments
-FutureFlight.aero | Drupal, PHP, Node.js, Ansible, CloudFormation Jan. 2019 – Oct. 2020
-FutureFlight is an industry news site with a directory of EVTOL aircraft and related services.
-• Architected server infrastructure for Drupal content management system
-• Wrote Lambda function code for subscriber account services
-• Designed and implemented infrastructure for subscriber account services
-• Designed and implemented data model for EVTOL aircraft directory
-• Implemented local development environments using DrupalVM
-Business Jet Traveler | Drupal, PHP, CloudFormation Jan. 2018 – Dec. 2018
-Business Jet Traveler is a monthly magazine for private jet owners and operators.
-• Designed and implemented data model for aircraft directory
-• Wrote a map-based tool to visualize aircraft specifications
-• Migrated all infrastructure from Acquia hosting to AWS in CloudFormation
-• Implemented and maintained local development environments using Vagrant across multiple OSes
+DEVONtechnologies Remote (Bietigheim-Bissingen, Germany)
+• Developed multi-leader sync system for flagship macOS/iOS apps with millions of users
+• Introduced CI/CD pipelines and Agile practices to the development team
 Technical Skills
-Languages: JavaScript, Bash, Rust, Python, C, PHP, Go, Objective-C, Clojure
+Languages: Rust, Python, Bash, JavaScript, Go, C, PHP, Objective-C, Clojure
 Infrastructure-as-Code: Terraform, Ansible, CloudFormation
-Containerization/Orchestration: Kubernetes, Docker/Docker-Compose, LXC, Nomad
+Orchestration/HPC: Kubernetes, Slurm, Docker, Nomad, Nextflow
 CI/CD: GitHub Actions, Jenkins, CodeBuild/CodePipeline
-Logging/Monitoring: Datadog, CloudWatch, PagerDuty, Sentry, OpenTelemetry
-Methodologies: DevOps, GitOps, DevSecOps, MLOps, Agile, Scrum, Kanban
-Miscellaneous: JSON:API, GOFAI, Slurm, Consul, Envoy, Vault, L
-A
-TEX
+Observability: Prometheus, Grafana, OpenTelemetry, Datadog, CloudWatch
+Service Mesh/Security: Consul, Envoy, Vault, Cilium
+Projects
+Goldentooth: Multi-node Kubernetes cluster with Slurm job scheduling, GPU compute, and JupyterLab; full observability stack
+and GitOps deployment (Talos, Kubernetes, Flux CD, Slurm)
+Whispers: Distributed agent mesh with decentralized consensus for emergent problem-solving (Rust)
+Blackpool: Bytecode compiler and virtual machine for the Lox language (Rust)
+Greenstone: Cycle-accurate NES emulator with precise timing and hardware modeling (Rust)
+Sunhouse: Physically-based ray tracer implementing path tracing and Monte Carlo sampling (Rust)
+Clork: Port of Zork I from the original mainframe MDL to modern Clojure (Clojure)
 Education
-University of Nevada at Las Vegas Las Vegas, NV
-Bachelor of Arts in Computer Science May 2009 – Dec 2011
-Personal Projects (Just for Fun)
-Whispers: A self-organizing, belief-driven mesh where nodes propose, verify, and evolve solutions through dynamic,
-decentralized consensus (Rust)
-Goldentooth: Raspberry Pi Kubernetes/Slurm/Nomad Cluster, infrastructure red in tooth and claw (Ansible, Terraform, Bash)
-Blackpool: An implementation of Bob Nystrom’s Lox programming language and virtual machine (Rust)
-Greenstone: A cycle-accurate NES emulator (Rust)
-Sunhouse: A simple ray-tracing renderer (Rust)
-CLORK: A port (early stages) of ZORK I from the original microcomputer ZIL (Clojure)
+University of Nevada, Las Vegas Las Vegas, NV
+Bachelor of Arts in Computer Science Dec. 2011
 

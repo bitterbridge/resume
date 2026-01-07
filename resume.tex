@@ -132,10 +132,10 @@
 \begin{document}
 
 \newcommand{\MyEmail}{clean.post9026@tenesm.us}
-\newcommand{\MyTitle}{Senior Psychonautic Engineer}
+\newcommand{\MyTitle}{Senior Platform Engineer}
 \newcommand{\MyFirstName}{Nathan}
 \newcommand{\MyLastName}{Douglas}
-\newcommand{\MyFullName}{Nathan ``Nug Doug'' Douglas}
+\newcommand{\MyFullName}{Nathan Douglas}
 \newcommand{\MyPhoneNumber}{(330) 998-8049}
 \newcommand{\MyPhoneNumberPlain}{+13309988049}
 \newcommand{\MyWebsite}{darkdell.net}
@@ -146,16 +146,15 @@
 
 \begin{center}
   \textbf{\Huge \scshape \MyFullName} \\ \vspace{1pt}
-  \small \faPhone\hspace{0.5em}\MyPhoneNumber\hspace{0.25em} $|$ \href{mailto:\MyEmail}{\faAt\hspace{0.5em}\underline{\MyEmail}} $|$ 
+  \small \faPhone\hspace{0.5em}\MyPhoneNumber\hspace{0.25em} $|$ \href{mailto:\MyEmail}{\faAt\hspace{0.5em}\underline{\MyEmail}} $|$
   \href{https://linkedin.com/in/\MyLinkedInUsername}{\faLinkedin\hspace{0.5em}\underline{linkedin.com/in/\MyLinkedInUsername}} $|$
   \href{https://github.com/\MyGitHubUsername}{\faGithub\hspace{0.5em}\underline{github.com/\MyGitHubUsername}}
 \end{center}
 
 \begin{center}
-I'm looking for a role that blends systems thinking, creative autonomy, and technical depth — 
-ideally at the intersection of machine learning, simulation, and infrastructure. I thrive in 
-environments that value elegance, exploration, and play, where weirdness is a feature, not a 
-bug. I want to expand the frontiers of science, benefit humanity, and blow minds.
+Platform engineer with 12+ years building infrastructure for distributed systems.
+Currently focused on ML/HPC infrastructure: Kubernetes, Slurm, GPU workloads.
+Seeking roles bridging platform engineering and scientific computing.
 \end{center}
 
 %-----------EXPERIENCE-----------
@@ -163,107 +162,59 @@ bug. I want to expand the frontiers of science, benefit humanity, and blow minds
   \resumeSubHeadingListStart
 
     \resumeSubheading
-      {Senior DevOps/Platform Engineer}{Oct. 2020 – Present}
-      {Agile Six Applications, Inc}{San Diego, CA (Remote)}
-      \resumeSubheadingNote{(on contract to the U.S. Department of Veterans Affairs)}
+      {Senior Platform Engineer}{Oct. 2020 – Present}
+      {Agile Six Applications, Inc (contract to U.S. Department of Veterans Affairs)}{Remote}
       \resumeItemListStart
-        \resumeItem{Migrated and modernized the VA.gov Check-In Experience products}
-        \resumeItem{Served as Tech Lead for the VA.gov Content Management System product}
-        \resumeItem{Served on a task force to improve hiring practices for DevOps engineers}
-        \resumeItem{Hired multiple Senior Engineers and a Software Quality Architect}
-        \resumeItem{Contributed to contract proposals and case studies}
-        \resumeItem{Ensured and documented compliance with regulations across multiple products}
+        \resumeItem{Migrated VA.gov Check-In infrastructure between AWS accounts; converted CloudFormation to Terraform}
+        \resumeItem{Led VA.gov CMS team through two major Drupal upgrades (8 → 9 → 10) with zero unplanned downtime}
+        \resumeItem{Parallelized test suite, reducing CI time by 60\%; built system tests spanning multiple products and upstream integrations}
+        \resumeItem{Architected content release pipeline serving VA.gov's 300K+ pages to millions of veterans}
+        \resumeItem{Managed ATO compliance for PHI/PII-handling systems}
       \resumeItemListEnd
 
     \resumeSubheading
       {Senior Software/DevOps Engineer}{Jan. 2016 – Oct. 2020}
-      {Convention News Company}{Midland Park, NJ (Remote)}
+      {Convention News Company}{Remote}
       \resumeItemListStart
-        \resumeItem{Architected infrastructure and built content and account management and backend services for FutureFlight.aero}
-        \resumeItem{Designed and constructed API and backend services for Business Jet Traveler and Aviation International News}
-        \resumeItem{Migrated all products from Acquia hosting to AWS, reducing yearly IT operating costs by ~70\%}
-        \resumeItem{Developed bespoke app to centralize ad sales, subscriptions, and circulation data}
-        \resumeItem{Guided and mentored junior engineers, emphasizing soft skills and engineering best practices}
-        \resumeItem{Created and maintained Vagrant, Docker, and DrupalVM development environments}
-        \resumeItem{Developed and maintained CI/CD pipelines for all products}
+        \resumeItem{Migrated all products from Acquia to AWS, reducing yearly infrastructure costs by 70\%}
+        \resumeItem{Architected infrastructure and backend services for FutureFlight.aero and Business Jet Traveler}
+        \resumeItem{Built Lambda-based subscriber services and data pipelines for ad sales and circulation}
+        \resumeItem{Established CI/CD pipelines and containerized development environments across all products}
       \resumeItemListEnd
 
     \resumeSubheading
       {Software Engineer}{Jan. 2012 – Dec. 2015}
-      {DEVONtechnologies}{Bietigheim-Bissingen, Germany (Remote)}
+      {DEVONtechnologies}{Remote (Bietigheim-Bissingen, Germany)}
       \resumeItemListStart
-        \resumeItem{Developed, launched, and maintained multi-leader sync technologies for flagship apps}
-        \resumeItem{Led the adoption of Agile project management and development practices}
-        \resumeItem{Introduced CI/CD pipelines and other DevOps best practices}
+        \resumeItem{Developed multi-leader sync system for flagship macOS/iOS apps with millions of users}
+        \resumeItem{Introduced CI/CD pipelines and Agile practices to the development team}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
-
-%-----------PROJECTS-----------
-\section{Major Projects}
-  \resumeSubHeadingListStart
-
-    \resumeProjectHeading
-      {\textbf{VA.gov Check-In Experience} $|$ \emph{Terraform, Node.js, AWS, GitHub Actions}}{Feb. 2024 – Present}
-        \resumeSubheadingNote{CHIP (Check-In Integration Point) allows Veterans to check in for appointments at VA facilities.}
-        \resumeSubheadingNote{LoROTA (Low-Risk One-Time Authentication) allows checking in quickly while protecting PHI/PII.}
-        \resumeItemListStart
-          \resumeItem{Migrated infrastructure for CHIP, LoROTA, and related projects between AWS accounts}
-          \resumeItem{Migrated Infrastructure-as-Code for all projects from CloudFormation to Terraform}
-          \resumeItem{Introduced and wrote Terraform tests for automated testing of reusable Terraform modules}
-          \resumeItem{Introduced and wrote system tests spanning multiple products and their upstream integrations}
-          \resumeItem{Migrated from using IAM service accounts to OIDC role assumption}
-          \resumeItem{Managed compliance and collaboration in ATO (Authority to Operate) and PDB (Product Decision Board) processes}
-        \resumeItemListEnd
-
-    \resumeProjectHeading
-      {\textbf{VA.gov Content Management System} $|$ \emph{Drupal, PHP, Node.js, Ansible }}{Oct. 2020 – Feb. 2024}
-        \resumeSubheadingNote{The CMS allows VA.gov content editors to create, edit, and publish content.}
-        \resumeSubheadingNote{Content is delivered to VA.gov via a custom static build system.}
-        \resumeItemListStart
-          \resumeItem{Directed primary development of the CMS's custom modules and ancillary services}
-          \resumeItem{Maintained, upgraded, and refined CI/CD pipelines in GitHub Actions and Jenkins}
-          \resumeItem{Parallelized test suite, reducing test time by 60\%}
-          \resumeItem{Led two major version Drupal upgrades of 8 -\> 9 -\> 10}
-          \resumeItem{Refactored the CMS' internal content release management system to reduce toil and deployment stress}
-          \resumeItem{Maintained and improved CI/CD pipelines for the content build and release processes}
-          \resumeItem{Developed and documented procedures for disaster recovery, out-of-band deploys, etc}
-          \resumeItem{Developed and maintained DDEV-based local development environments}
-        \resumeItemListEnd
-
-    \resumeProjectHeading
-      {\textbf{FutureFlight.aero} $|$ \emph{Drupal, PHP, Node.js, Ansible, CloudFormation}}{Jan. 2019 – Oct. 2020}
-        \resumeSubheadingNote{FutureFlight is an industry news site with a directory of EVTOL aircraft and related services.}
-        \resumeItemListStart
-          \resumeItem{Architected server infrastructure for Drupal content management system}
-          \resumeItem{Wrote Lambda function code for subscriber account services}
-          \resumeItem{Designed and implemented infrastructure for subscriber account services}
-          \resumeItem{Designed and implemented data model for EVTOL aircraft directory}
-          \resumeItem{Implemented local development environments using DrupalVM}
-        \resumeItemListEnd
-
-    \resumeProjectHeading
-      {\textbf{Business Jet Traveler} $|$ \emph{Drupal, PHP, CloudFormation}}{Jan. 2018 – Dec. 2018}
-        \resumeSubheadingNote{Business Jet Traveler is a monthly magazine for private jet owners and operators.}
-        \resumeItemListStart
-          \resumeItem{Designed and implemented data model for aircraft directory}
-          \resumeItem{Wrote a map-based tool to visualize aircraft specifications}
-          \resumeItem{Migrated all infrastructure from Acquia hosting to AWS in CloudFormation}
-          \resumeItem{Implemented and maintained local development environments using Vagrant across multiple OSes}
-        \resumeItemListEnd
-    \resumeSubHeadingListEnd
 
 %-----------TECHNICAL SKILLS-----------
 \section{Technical Skills}
   \resumeSubHeadingListStart
     \resumeListicleStart
-      \resumeListicleItem{Languages}{JavaScript, Bash, Rust, Python, C, PHP, Go, Objective-C, Clojure } \\
-      \resumeListicleItem{Infrastructure-as-Code}{Terraform, Ansible, CloudFormation } \\
-      \resumeListicleItem{Containerization/Orchestration}{Kubernetes, Docker/Docker-Compose, LXC, Nomad } \\
-      \resumeListicleItem{CI/CD}{GitHub Actions, Jenkins, CodeBuild/CodePipeline } \\
-      \resumeListicleItem{Logging/Monitoring}{Datadog, CloudWatch, PagerDuty, Sentry, OpenTelemetry } \\
-      \resumeListicleItem{Methodologies}{DevOps, GitOps, DevSecOps, MLOps, Agile, Scrum, Kanban } \\
-      \resumeListicleItem{Miscellaneous}{JSON:API, GOFAI, Slurm, Consul, Envoy, Vault, \LaTeX{} } \\
+      \resumeListicleItem{Languages}{Rust, Python, Bash, JavaScript, Go, C, PHP, Objective-C, Clojure} \\
+      \resumeListicleItem{Infrastructure-as-Code}{Terraform, Ansible, CloudFormation} \\
+      \resumeListicleItem{Orchestration/HPC}{Kubernetes, Slurm, Docker, Nomad, Nextflow} \\
+      \resumeListicleItem{CI/CD}{GitHub Actions, Jenkins, CodeBuild/CodePipeline} \\
+      \resumeListicleItem{Observability}{Prometheus, Grafana, OpenTelemetry, Datadog, CloudWatch} \\
+      \resumeListicleItem{Service Mesh/Security}{Consul, Envoy, Vault, Cilium} \\
+    \resumeListicleEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+  \resumeSubHeadingListStart
+    \resumeListicleStart
+      \resumeSideProjectListicleItem{https://github.com/goldentooth/}{🦷 Goldentooth}{Multi-node Kubernetes cluster with Slurm job scheduling, GPU compute, and JupyterLab; full observability stack and GitOps deployment}{Talos, Kubernetes, Flux CD, Slurm} \\
+      \resumeSideProjectListicleItem{https://github.com/ndouglas/whispers/}{🗣️ Whispers}{Distributed agent mesh with decentralized consensus for emergent problem-solving}{Rust} \\
+      \resumeSideProjectListicleItem{https://github.com/bitterbridge/blackpool/}{💻 Blackpool}{Bytecode compiler and virtual machine for the Lox language}{Rust} \\
+      \resumeSideProjectListicleItem{https://github.com/ndouglas/greenstone/}{🎮 Greenstone}{Cycle-accurate NES emulator with precise timing and hardware modeling}{Rust} \\
+      \resumeSideProjectListicleItem{https://github.com/ndouglas/sunhouse/}{🌈 Sunhouse}{Physically-based ray tracer implementing path tracing and Monte Carlo sampling}{Rust} \\
+      \resumeSideProjectListicleItem{https://github.com/ndouglas/clork/}{📜 Clork}{Port of Zork I from the original mainframe MDL to modern Clojure}{Clojure} \\
     \resumeListicleEnd
   \resumeSubHeadingListEnd
 
@@ -271,22 +222,8 @@ bug. I want to expand the frontiers of science, benefit humanity, and blow minds
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {University of Nevada at Las Vegas}{Las Vegas, NV}
-      {Bachelor of Arts in Computer Science}{May 2009 – Dec 2011}
+      {University of Nevada, Las Vegas}{Las Vegas, NV}
+      {Bachelor of Arts in Computer Science}{Dec. 2011}
   \resumeSubHeadingListEnd
 
-%-----------PERSONAL PROJECTS-----------
-\section{Personal Projects (Just for Fun)}
-  \resumeSubHeadingListStart
-    \resumeListicleStart
-      \resumeSideProjectListicleItem{https://github.com/ndouglas/whispers/}{🗣️ Whispers}{A self-organizing, belief-driven mesh where nodes propose, verify, and evolve solutions through dynamic, decentralized consensus}{Rust} \\
-      \resumeSideProjectListicleItem{https://github.com/goldentooth/}{🦷 Goldentooth}{Raspberry Pi Kubernetes/Slurm/Nomad Cluster, infrastructure red in tooth and claw}{Ansible, Terraform, Bash} \\
-      \resumeSideProjectListicleItem{https://github.com/ndouglas/blackpool/}{💻 Blackpool}{An implementation of Bob Nystrom's Lox programming language and virtual machine}{Rust} \\
-      \resumeSideProjectListicleItem{https://github.com/ndouglas/greenstone/}{🎮 Greenstone}{A cycle-accurate NES emulator}{Rust} \\
-      \resumeSideProjectListicleItem{https://github.com/ndouglas/sunhouse/}{🌈 Sunhouse}{A simple ray-tracing renderer}{Rust} \\
-      \resumeSideProjectListicleItem{https://github.com/ndouglas/clork/}{📜 CLORK}{A port (early stages) of \emph{ZORK I} from the original microcomputer ZIL}{Clojure} \\
-    \resumeListicleEnd
-  \resumeSubHeadingListEnd
-
-  %-----------THAT'S ALL, FOLKS!-----------
 \end{document}
