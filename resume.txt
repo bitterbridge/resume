@@ -5,21 +5,24 @@ infrastructure: Kubernetes, Slurm, GPU workloads. Seeking roles bridging platfor
 Experience
 Senior Platform Engineer Oct. 2020 – Present
 Agile Six Applications, Inc (contract to U.S. Department of Veterans Affairs) Remote
-• Migrated VA.gov Check-In infrastructure between AWS accounts; converted CloudFormation to Terraform
+• Migrated VA.gov Check-In infrastructure between AWS accounts; converted CloudFormation to Terraform with automated
+module testing
 • Led VA.gov CMS team through two major Drupal upgrades (8 → 9 → 10) with zero unplanned downtime
 • Parallelized test suite, reducing CI time by 60%; built system tests spanning multiple products and upstream integrations
 • Architected content release pipeline serving VA.gov’s 300K+ pages to millions of veterans
-• Managed ATO compliance for PHI/PII-handling systems
+• Managed ATO compliance for PHI/PII-handling systems; hired senior engineers and QA architect
 Senior Software/DevOps Engineer Jan. 2016 – Oct. 2020
 Convention News Company Remote
 • Migrated all products from Acquia to AWS, reducing yearly infrastructure costs by 70%
 • Architected infrastructure and backend services for FutureFlight.aero and Business Jet Traveler
 • Built Lambda-based subscriber services and data pipelines for ad sales and circulation
 • Established CI/CD pipelines and containerized development environments across all products
+• Mentored junior engineers on engineering best practices and professional development
 Software Engineer Jan. 2012 – Dec. 2015
 DEVONtechnologies Remote (Bietigheim-Bissingen, Germany)
 • Developed multi-leader sync system for flagship macOS/iOS apps with millions of users
 • Introduced CI/CD pipelines and Agile practices to the development team
+• Collaborated with a distributed international team across multiple time zones
 Technical Skills
 Languages: Rust, Python, Bash, JavaScript, Go, C, PHP, Objective-C, Clojure
 Infrastructure-as-Code: Terraform, Ansible, CloudFormation
