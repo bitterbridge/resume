@@ -36,7 +36,7 @@ and GitOps deployment (Talos, Kubernetes, Flux CD, Slurm)
 Whispers: Gossip-based mesh network with fraud-resistant distributed optimization via audited CRDTs (Rust)
 Blackpool: Stack-based bytecode VM with mark-and-sweep GC, closures, and inheritance (Rust)
 Greenstone: Cycle-accurate NES emulator with precise timing and hardware modeling (Rust)
-Sunhouse: Physically-based ray tracer implementing path tracing and Monte Carlo sampling (Rust)
+Distillation: Knowledge distillation with Jacobian/Hessian regularization and adversarial training (Python, PyTorch)
 Clork: Port of Zork I from the original mainframe MDL to modern Clojure (Clojure)
 Education
 University of Nevada, Las Vegas Las Vegas, NV
