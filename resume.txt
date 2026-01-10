@@ -39,7 +39,7 @@ Whispers: Gossip-based mesh network with fraud-resistant distributed optimizatio
 Distillation: Knowledge distillation with Jacobian/Hessian regularization and adversarial training (Python, PyTorch)
 Blackpool: Stack-based bytecode VM with mark-and-sweep GC, closures, and inheritance (Rust)
 Greenstone: Cycle-accurate NES emulator with precise timing and hardware modeling (Rust)
-Clork: Port of Zork I from the original mainframe MDL to modern Clojure (Clojure)
+Clork: Zork I port with NL Parser, backward-chaining GOAP planner, and OpenAI Gym-style RL training API (Clojure)
 Education
 University of Nevada, Las Vegas Las Vegas, NV
 Bachelor of Arts in Computer Science Dec. 2011
