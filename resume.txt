@@ -33,8 +33,8 @@ Service Mesh/Security: Consul, Envoy, Vault, Cilium
 Projects
 Goldentooth: Multi-node Kubernetes cluster with Slurm job scheduling, GPU compute, and JupyterLab; full observability stack
 and GitOps deployment (Talos, Kubernetes, Flux CD, Slurm)
-Bitwit: Spaced repetition platform for CS education with time-based grading and parameterized card generation (Beta)
-(TypeScript, AWS Lambda, DynamoDB)
+Bitwit: Spaced repetition platform for CS education with time-based grading and parameterized card generation (TypeScript,
+AWS Lambda, DynamoDB)
 Whispers: Gossip-based mesh network with fraud-resistant distributed optimization via audited CRDTs (Rust)
 Distillation: Knowledge distillation with Jacobian/Hessian regularization and adversarial training (Python, PyTorch)
 Blackpool: Stack-based bytecode VM with mark-and-sweep GC, closures, and inheritance (Rust)
