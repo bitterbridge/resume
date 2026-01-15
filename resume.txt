@@ -1,6 +1,6 @@
 Nathan Douglas
 Phone (330) 998-8049 | @ clean.post9026@tenesm.us | LINKEDIN linkedin.com/in/nug-doug | Github github.com/ndouglas
-Platform engineer with 12+ years building infrastructure for distributed systems. Currently focused on ML/HPC
+Platform engineer with 14+ years building infrastructure for distributed systems. Currently focused on ML/HPC
 infrastructure: Kubernetes, Slurm, GPU workloads. Seeking roles bridging platform engineering and scientific computing.
 Experience
 Senior Platform Engineer Oct. 2020 – Present
@@ -38,6 +38,7 @@ Bitwit: Spaced repetition platform for CS education with time-based grading and 
 Whispers: Gossip-based mesh network with fraud-resistant distributed optimization via audited CRDTs (Rust)
 Distillation: Knowledge distillation with Jacobian/Hessian regularization and adversarial training (Python, PyTorch)
 Blackpool: Stack-based bytecode VM with mark-and-sweep GC, closures, and inheritance (Rust)
+Longtable: Rule-based simulation engine with LISP DSL, immutable world state, and time-travel debugging (Rust)
 Greenstone: Cycle-accurate NES emulator with precise timing and hardware modeling (Rust)
 Clork: Zork I port with NL Parser, backward-chaining GOAP planner, and OpenAI Gym-style RL training API (Clojure)
 Education
